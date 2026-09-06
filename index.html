@@ -3,216 +3,600 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Gaëlle Duthe | Copywriter & Translator</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f7f7f7;
-            color: #333;
+            background: #faf9f7;
+            color: #292929;
             line-height: 1.6;
         }
 
-        header {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 70px 20px;
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 1px solid #eee;
         }
 
-        header h1 {
-            font-size: 48px;
-            margin: 0;
-        }
-
-        header p {
+        nav .logo {
             font-size: 20px;
-            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 25px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #8b5e83;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 10%;
+            background: #eee8ed;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero small {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: bold;
+            color: #8b5e83;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            line-height: 1.1;
+            margin: 20px 0;
+        }
+
+        .hero h2 {
+            font-size: 26px;
+            font-weight: normal;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 28px;
+            background: #292929;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+        }
+
+        .button:hover {
+            background: #8b5e83;
         }
 
         section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 30px;
+            max-width: 1050px;
+            margin: auto;
+            padding: 90px 30px;
+        }
+
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 35px;
+        }
+
+        .intro {
+            font-size: 20px;
+            max-width: 800px;
+            color: #555;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .card {
             background: white;
-            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid #eee;
+            border-radius: 15px;
         }
 
-        h2 {
-            color: #222;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 10px;
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 21px;
         }
 
-        .skills {
+        .card p {
+            color: #666;
+        }
+
+        .tags {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+            margin-top: 20px;
         }
 
-        .skill {
-            background: #eee;
-            padding: 8px 15px;
+        .tag {
+            background: #eee8ed;
+            padding: 8px 14px;
             border-radius: 20px;
+            font-size: 14px;
         }
 
-        .project {
-            margin: 25px 0;
-            padding: 20px;
-            background: #f5f5f5;
-            border-radius: 10px;
+        .experience {
+            border-left: 3px solid #8b5e83;
+            padding-left: 25px;
+            margin-bottom: 35px;
+        }
+
+        .experience h3 {
+            font-size: 21px;
+        }
+
+        .experience .date {
+            color: #8b5e83;
+            font-weight: bold;
+            margin: 5px 0 10px;
+        }
+
+        .languages {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .language {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+
+        .language strong {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .contact {
+            background: #eee8ed;
+            text-align: center;
+            max-width: none;
+        }
+
+        .contact p {
+            margin: 10px 0;
+        }
+
+        .contact a {
+            color: #292929;
         }
 
         footer {
             text-align: center;
             padding: 30px;
-            color: #666;
+            background: #292929;
+            color: white;
+            font-size: 14px;
         }
 
-        a {
-            color: #222;
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero h2 {
+                font-size: 21px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .languages {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            nav {
+                padding: 20px;
+            }
+
+            nav a {
+                margin-left: 10px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Gaëlle Duthe</h1>
-    <p>Copywriter & Translator | French • English • Spanish</p>
-    <p>SEO • Content Creation • Marketing • AI Content</p>
-</header>
+    <nav>
+        <div class="logo">GAËLLE DUTHE</div>
 
-<section>
-    <h2>À propos de moi</h2>
+        <div>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-    <p>
-        Copywriter and translator specialized in French and English content,
-        with experience in content creation, proofreading, SEO optimization,
-        localization and digital marketing.
-    </p>
 
-    <p>
-        I create and optimize engaging content for digital and e-commerce
-        environments, combining writing expertise with AI-powered tools
-        and marketing knowledge.
-    </p>
-</section>
+    <header class="hero">
 
-<section>
-    <h2>Compétences</h2>
+        <div class="hero-content">
 
-    <div class="skills">
-        <span class="skill">Copywriting</span>
-        <span class="skill">SEO</span>
-        <span class="skill">Proofreading</span>
-        <span class="skill">Translation</span>
-        <span class="skill">Localization</span>
-        <span class="skill">Content Creation</span>
-        <span class="skill">E-commerce</span>
-        <span class="skill">Marketing</span>
-        <span class="skill">AI Content</span>
-        <span class="skill">Competitive Intelligence</span>
-    </div>
-</section>
+            <small>Copywriter · Translator · Content Specialist</small>
 
-<section>
-    <h2>Langues</h2>
+            <h1>Gaëlle Duthe</h1>
 
-    <p>🇫🇷 French — Native</p>
-    <p>🇬🇧 English — C1</p>
-    <p>🇪🇸 Spanish — C1</p>
-    <p>🇩🇪 German — A2</p>
-</section>
+            <h2>French · English · Spanish</h2>
 
-<section>
-    <h2>Projets</h2>
+            <p>
+                I create, translate and optimize digital content
+                for international audiences, with a focus on SEO,
+                marketing, e-commerce and AI-assisted content creation.
+            </p>
 
-    <div class="project">
-        <h3>🛍️ SEO & E-commerce Content</h3>
-        <p>
-            Optimization of product descriptions with a focus on SEO,
-            readability and customer engagement.
+            <a class="button" href="#contact">
+                Let's work together
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <section id="about">
+
+        <h2>About me</h2>
+
+        <p class="intro">
+            Copywriter and translator specialized in French and English
+            content, with experience in digital content creation,
+            proofreading, SEO optimization, localization and marketing.
         </p>
-    </div>
 
-    <div class="project">
-        <h3>🌍 Translation & Localization</h3>
-        <p>
-            Translation and adaptation of French and English content
-            for international audiences.
+        <br>
+
+        <p class="intro">
+            My approach combines strong writing and language skills
+            with marketing knowledge and AI-powered tools to create
+            clear, engaging and effective content.
         </p>
-    </div>
 
-    <div class="project">
-        <h3>🤖 AI-Powered Content</h3>
+    </section>
+
+
+    <section id="skills">
+
+        <h2>What I do</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>✍️ Copywriting</h3>
+                <p>
+                    Writing and optimizing engaging marketing,
+                    digital and e-commerce content.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🔎 SEO Content</h3>
+                <p>
+                    Optimizing product descriptions and digital content
+                    for search visibility and customer engagement.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🌍 Translation & Localization</h3>
+                <p>
+                    Translating and adapting French and English content
+                    for international audiences.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🤖 AI-Powered Content</h3>
+                <p>
+                    Using AI-assisted workflows to create, improve
+                    and optimize digital content while maintaining
+                    human quality control.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="tags">
+            <span class="tag">Copywriting</span>
+            <span class="tag">SEO</span>
+            <span class="tag">Proofreading</span>
+            <span class="tag">Translation</span>
+            <span class="tag">Localization</span>
+            <span class="tag">E-commerce</span>
+            <span class="tag">Marketing</span>
+            <span class="tag">Content Creation</span>
+            <span class="tag">AI Content</span>
+            <span class="tag">Competitive Intelligence</span>
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>Languages</h2>
+
+        <div class="languages">
+
+            <div class="language">
+                <strong>🇫🇷 French</strong>
+                Native
+            </div>
+
+            <div class="language">
+                <strong>🇬🇧 English</strong>
+                C1
+            </div>
+
+            <div class="language">
+                <strong>🇪🇸 Spanish</strong>
+                C1
+            </div>
+
+            <div class="language">
+                <strong>🇩🇪 German</strong>
+                A2
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="experience">
+
+        <h2>Experience</h2>
+
+        <div class="experience">
+
+            <h3>Copywriter & Translator</h3>
+
+            <div class="date">2024 – 2026</div>
+
+            <p>
+                Writing, proofreading and optimizing marketing and
+                digital content. Optimization of product descriptions
+                for SEO and customer engagement. Creation of
+                AI-powered and geo-optimized content.
+            </p>
+
+        </div>
+
+
+        <div class="experience">
+
+            <h3>Marketing & Customer Service Assistant Manager</h3>
+
+            <div class="date">6-month internship · Sprachcaffe · Frankfurt</div>
+
+            <p>
+                Content creation and proofreading, website optimization,
+                creation and improvement of marketing and sales materials,
+                and communication with B2B and B2C customers.
+            </p>
+
+        </div>
+
+
+        <div class="experience">
+
+            <h3>Marketing & Communications Intern</h3>
+
+            <div class="date">Artisans du Monde · Toulouse</div>
+
+            <p>
+                Creation and adaptation of marketing and communication
+                content, website proofreading and interviews with
+                volunteers.
+            </p>
+
+        </div>
+
+
+        <div class="experience">
+
+            <h3>Tourism Intern</h3>
+
+            <div class="date">Metz Tourist Office</div>
+
+            <p>
+                Welcoming and informing visitors in French, English
+                and Spanish, and managing relationships with hotels.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section id="projects">
+
+        <h2>Selected projects</h2>
+
+        <div class="grid">
+
+            <div class="card">
+
+                <h3>🛍️ SEO E-commerce</h3>
+
+                <p>
+                    Product description optimization focused on SEO,
+                    readability and customer engagement.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>🌍 FR → EN Localization</h3>
+
+                <p>
+                    Adaptation of French marketing content for
+                    English-speaking audiences.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>🤖 AI Content Workflow</h3>
+
+                <p>
+                    AI-assisted content creation combined with
+                    human editing, proofreading and optimization.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>📧 Marketing Campaign</h3>
+
+                <p>
+                    Creation and optimization of newsletter and
+                    marketing content.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>Education</h2>
+
+        <div class="card">
+
+            <h3>Master's Degree in International Business Languages</h3>
+
+            <p>
+                University of Perpignan
+            </p>
+
+            <br>
+
+            <p>
+                International marketing, analysis of international
+                issues, specialized translation, management,
+                business and international law.
+            </p>
+
+        </div>
+
+        <br>
+
+        <div class="card">
+
+            <h3>Double Degree in English and Spanish</h3>
+
+            <p>
+                English and Spanish cultures and literatures,
+                literary translation and translation exercises.
+                Final year completed through the Erasmus program
+                in Valladolid, Spain.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>Tools</h2>
+
+        <div class="tags">
+
+            <span class="tag">Microsoft Office</span>
+            <span class="tag">Google Workspace</span>
+            <span class="tag">ChatGPT</span>
+            <span class="tag">Claude</span>
+            <span class="tag">Trello</span>
+            <span class="tag">ClickUp</span>
+            <span class="tag">InDesign</span>
+
+        </div>
+
+    </section>
+
+
+    <section id="contact" class="contact">
+
+        <h2>Let's connect</h2>
+
         <p>
-            Creation and optimization of digital content using AI-assisted
-            workflows combined with human editing and quality control.
+            Interested in working together?
         </p>
-    </div>
 
-    <div class="project">
-        <h3>📧 Marketing Content</h3>
         <p>
-            Creation and optimization of newsletters, marketing materials
-            and digital communication content.
+            <a href="mailto:gaelleduthe@yahoo.fr">
+                gaelleduthe@yahoo.fr
+            </a>
         </p>
-    </div>
-</section>
 
-<section>
-    <h2>Expérience</h2>
+        <p>
+            Metz, France
+        </p>
 
-    <h3>Copywriter & Translator</h3>
-    <p>
-        Writing, proofreading and optimizing marketing and digital content,
-        SEO product descriptions, newsletters and e-commerce content.
-    </p>
+    </section>
 
-    <h3>Marketing & Customer Service Assistant Manager</h3>
-    <p>
-        Internship at Sprachcaffe in Frankfurt: content creation,
-        website optimization, marketing materials and B2B/B2C communication.
-    </p>
 
-    <h3>Internship — Artisans du Monde</h3>
-    <p>
-        Creation and adaptation of marketing and communication content,
-        website proofreading and volunteer interviews.
-    </p>
-</section>
+    <footer>
 
-<section>
-    <h2>Formation</h2>
+        © 2026 Gaëlle Duthe · Copywriter & Translator
 
-    <h3>Master's Degree in International Business Languages</h3>
-    <p>University of Perpignan</p>
-
-    <h3>Double Degree in English and Spanish</h3>
-    <p>Including an Erasmus year in Valladolid, Spain.</p>
-</section>
-
-<section>
-    <h2>Outils</h2>
-
-    <p>
-        Microsoft Office • Google Workspace • ChatGPT • Claude •
-        Trello • ClickUp • InDesign
-    </p>
-</section>
-
-<section>
-    <h2>Contact</h2>
-
-    <p>Email : gaelleduthe@yahoo.fr</p>
-    <p>Metz, France</p>
-</section>
-
-<footer>
-    <p>© 2026 Gaëlle Duthe — Copywriter & Translator</p>
-</footer>
+    </footer>
 
 </body>
 </html>
