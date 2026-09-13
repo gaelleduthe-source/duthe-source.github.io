@@ -107,4 +107,1365 @@
         .hero-grid {
             display: grid;
             grid-template-columns: 1.7fr 0.8fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            color: #66635d;
+        }
+
+        h1 {
+            font-size: clamp(3.2rem, 7vw, 6.5rem);
+            line-height: 0.95;
+            letter-spacing: -5px;
+            margin-bottom: 35px;
+        }
+
+        .hero-title {
+            font-size: clamp(1.3rem, 2.5vw, 2rem);
+            line-height: 1.3;
+            max-width: 700px;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            max-width: 680px;
+            color: #5f5c56;
+            font-size: 1.05rem;
+            margin-bottom: 35px;
+        }
+
+        .hero-languages {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 35px;
+        }
+
+        .language {
+            border: 1px solid #c9c6bf;
+            border-radius: 30px;
+            padding: 8px 15px;
+            font-size: 0.82rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 23px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+
+        .button-dark {
+            background: #171717;
+            color: white;
+        }
+
+        .button-dark:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-outline {
+            border: 1px solid #171717;
+        }
+
+        .button-outline:hover {
+            background: #171717;
+            color: white;
+        }
+
+        .hero-mark {
+            width: 260px;
+            height: 260px;
+            border: 1px solid #bdbab3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+        }
+
+        .hero-mark span {
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: -4px;
+        }
+
+
+        /* ================================
+           SECTIONS
+        ================================= */
+
+        section {
+            padding: 100px 0;
+            border-top: 1px solid #dedcd7;
+        }
+
+        .section-header {
+            margin-bottom: 55px;
+        }
+
+        .section-number {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #77736c;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: clamp(2.3rem, 5vw, 4rem);
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .section-intro {
+            max-width: 700px;
+            margin-top: 20px;
+            color: #66635d;
+            font-size: 1.05rem;
+        }
+
+
+        /* ================================
+           ABOUT
+        ================================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .about-highlight {
+            border-left: 2px solid #171717;
+            padding-left: 25px;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+
+        /* ================================
+           EXPERTISE
+        ================================= */
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .expertise-card {
+            border: 1px solid #d5d2cb;
+            padding: 30px;
+            min-height: 200px;
+            background: #fbfaf8;
+            transition: transform 0.2s ease;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .expertise-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 15px;
+        }
+
+        .expertise-card p {
+            font-size: 0.9rem;
+            color: #68655f;
+        }
+
+
+        /* ================================
+           PROJECTS
+        ================================= */
+
+        .projects {
+            display: grid;
+            gap: 25px;
+        }
+
+        .project {
+            border: 1px solid #d5d2cb;
+            padding: 40px;
+            background: #fbfaf8;
+        }
+
+        .project-number {
+            font-size: 0.8rem;
+            color: #77736c;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .project h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .project p {
+            max-width: 800px;
+            color: #65625c;
+            margin-bottom: 25px;
+        }
+
+        .project-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .project-details span {
+            font-size: 0.78rem;
+            padding: 6px 11px;
+            border-radius: 20px;
+            background: #eceae5;
+        }
+
+
+        /* ================================
+           AI
+        ================================= */
+
+        .ai-section {
+            background: #171717;
+            color: white;
+        }
+
+        .ai-section .section-number,
+        .ai-section .section-intro {
+            color: #bcbab5;
+        }
+
+        .ai-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .ai-statement {
+            font-size: clamp(1.8rem, 4vw, 3.5rem);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+        }
+
+        .ai-text p {
+            color: #c2c0bb;
+            margin-bottom: 20px;
+        }
+
+        .ai-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .ai-tools span {
+            border: 1px solid #55534e;
+            padding: 8px 13px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+
+        /* ================================
+           EXPERIENCE
+        ================================= */
+
+        .experience-list {
+            display: grid;
+            gap: 45px;
+        }
+
+        .experience-item {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #dedcd7;
+        }
+
+        .experience-date {
+            font-size: 0.85rem;
+            color: #77736c;
+            font-weight: 700;
+        }
+
+        .experience-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .experience-company {
+            color: #77736c;
+            margin-bottom: 18px;
+        }
+
+        .experience-item ul {
+            padding-left: 20px;
+            color: #5f5c56;
+        }
+
+        .experience-item li {
+            margin-bottom: 8px;
+        }
+
+
+        /* ================================
+           EDUCATION & LANGUAGES
+        ================================= */
+
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+        }
+
+        .education-item {
+            margin-bottom: 35px;
+        }
+
+        .education-year {
+            font-size: 0.8rem;
+            color: #77736c;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .education-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 7px;
+        }
+
+        .education-item p {
+            color: #66635d;
+            font-size: 0.9rem;
+        }
+
+        .languages-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .language-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #dedcd7;
+            padding-bottom: 12px;
+        }
+
+        .language-level {
+            color: #77736c;
+        }
+
+
+        /* ================================
+           TOOLS
+        ================================= */
+
+        .tools-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tool {
+            border: 1px solid #c9c6bf;
+            padding: 10px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+        }
+
+
+        /* ================================
+           CONTACT
+        ================================= */
+
+        .contact {
+            text-align: center;
+            padding: 130px 0;
+        }
+
+        .contact h2 {
+            max-width: 850px;
+            margin: 0 auto 30px;
+        }
+
+        .contact p {
+            color: #66635d;
+            margin-bottom: 30px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        footer {
+            border-top: 1px solid #dedcd7;
+            padding: 30px 0;
+            color: #77736c;
+            font-size: 0.8rem;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+
+        /* ================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 70px 0;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .hero-mark {
+                width: 180px;
+                height: 180px;
+            }
+
+            .hero-mark span {
+                font-size: 2.8rem;
+            }
+
+            h1 {
+                letter-spacing: -3px;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+
+            .about-grid,
+            .ai-grid,
+            .two-columns {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-item {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ================================
+         NAVIGATION
+    ================================= -->
+
+    <nav>
+        <div class="nav-container">
+
+            <a href="#home" class="logo">
+                GAËLLE DUTHE
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- ================================
+         HERO
+    ================================= -->
+
+    <main id="home">
+
+        <section class="hero">
+
+            <div class="container">
+
+                <div class="hero-grid">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            French · English · Spanish
+                        </p>
+
+                        <h1>
+                            Gaëlle<br>
+                            Duthe
+                        </h1>
+
+                        <p class="hero-title">
+                            Multilingual Content & Localization Specialist
+                        </p>
+
+                        <p class="hero-description">
+                            I create, translate, localize and optimize digital
+                            content for international audiences, combining
+                            editorial expertise, SEO/GEO and AI-assisted
+                            workflows.
+                        </p>
+
+                        <div class="hero-languages">
+                            <span class="language">French — Native</span>
+                            <span class="language">English — C1</span>
+                            <span class="language">Spanish — C1</span>
+                            <span class="language">German — A2</span>
+                        </div>
+
+                        <div class="hero-buttons">
+                            <a href="#projects" class="button button-dark">
+                                View my work
+                            </a>
+
+                            <a href="#contact" class="button button-outline">
+                                Contact me
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="hero-profile">
+
+                        <div class="hero-mark">
+                            <span>GD</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             ABOUT
+        ================================= -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <p class="section-number">
+                        01 — ABOUT
+                    </p>
+
+                    <h2>
+                        Content with a<br>
+                        multilingual perspective.
+                    </h2>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <div class="about-text">
+
+                        <p>
+                            I am a French native content and language
+                            specialist with professional experience in
+                            copywriting, translation, proofreading,
+                            localization and digital content optimization.
+                        </p>
+
+                        <p>
+                            My current work combines content creation with
+                            SEO-focused optimization, geo-optimized content
+                            and AI-assisted workflows.
+                        </p>
+
+                        <p>
+                            With an academic background in International
+                            Business Languages and experience in France,
+                            Germany and Spain, I am comfortable working in
+                            multilingual and international environments.
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-highlight">
+
+                        My approach combines strong language skills,
+                        editorial precision and an understanding of how
+                        content needs to work for both people and digital
+                        platforms.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             EXPERTISE
+        ================================= -->
+
+        <section id="expertise">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <p class="section-number">
+                        02 — EXPERTISE
+                    </p>
+
+                    <h2>
+                        What I do
+                    </h2>
+
+                    <p class="section-intro">
+                        From the first draft to the final optimization,
+                        I work across the content lifecycle.
+                    </p>
+
+                </div>
+
+
+                <div class="expertise-grid">
+
+                    <div class="expertise-card">
+                        <h3>Copywriting</h3>
+                        <p>
+                            Clear and engaging marketing and digital content
+                            adapted to different audiences and objectives.
+                        </p>
+                    </div>
+
+                    <div class="expertise-card">
+                        <h3>Translation</h3>
+                        <p>
+                            French and English translation with attention to
+                            meaning, tone, terminology and context.
+                        </p>
+                    </div>
+
+                    <div class="expertise-card">
+                        <h3>Localization</h3>
+                        <p>
+                            Adapting content to language, culture, audience
+                            expectations and local search intent.
+                        </p>
+                    </div>
+
+                    <div class="expertise-card">
+                        <h3>SEO Content</h3>
+                        <p>
+                            Optimizing digital and e-commerce content for
+                            relevance, readability and search visibility.
+                        </p>
+                    </div>
+
+                    <div class="expertise-card">
+                        <h3>GEO Content</h3>
+                        <p>
+                            Creating and optimizing geo-targeted content
+                            aligned with specific audiences and locations.
+                        </p>
+                    </div>
+
+                    <div class="expertise-card">
+                        <h3>Editing & Proofreading</h3>
+                        <p>
+                            Improving grammar, clarity, consistency, tone
+                            and overall content quality.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             PROJECTS
+        ================================= -->
+
+        <section id="projects">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <p class="section-number">
+                        03 — SELECTED WORK
+                    </p>
+
+                    <h2>
+                        What I have<br>
+                        worked on
+                    </h2>
+
+                    <p class="section-intro">
+                        Examples of the types of content and projects I work
+                        on across multilingual, digital and international
+                        environments.
+                    </p>
+
+                </div>
+
+
+                <div class="projects">
+
+
+                    <article class="project">
+
+                        <p class="project-number">
+                            PROJECT 01
+                        </p>
+
+                        <h3>
+                            SEO E-commerce Content
+                        </h3>
+
+                        <p>
+                            Writing and optimizing product descriptions to
+                            improve clarity, customer engagement and search
+                            relevance. Content is structured around user
+                            needs while integrating SEO considerations.
+                        </p>
+
+                        <div class="project-details">
+                            <span>Copywriting</span>
+                            <span>E-commerce</span>
+                            <span>SEO</span>
+                            <span>Content Optimization</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <p class="project-number">
+                            PROJECT 02
+                        </p>
+
+                        <h3>
+                            French ↔ English Localization
+                        </h3>
+
+                        <p>
+                            Translating and adapting digital content while
+                            maintaining meaning, tone, consistency and
+                            relevance for the target audience.
+                        </p>
+
+                        <div class="project-details">
+                            <span>Translation</span>
+                            <span>Localization</span>
+                            <span>French</span>
+                            <span>English</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <p class="project-number">
+                            PROJECT 03
+                        </p>
+
+                        <h3>
+                            AI-Assisted Content Workflow
+                        </h3>
+
+                        <p>
+                            Using AI tools to support content creation and
+                            optimization while maintaining human oversight
+                            for language quality, accuracy, consistency
+                            and editorial standards.
+                        </p>
+
+                        <div class="project-details">
+                            <span>AI Content</span>
+                            <span>ChatGPT</span>
+                            <span>Claude</span>
+                            <span>Editing</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <p class="project-number">
+                            PROJECT 04
+                        </p>
+
+                        <h3>
+                            Marketing & Campaign Content
+                        </h3>
+
+                        <p>
+                            Creating and adapting content for newsletters,
+                            marketing campaigns and sales materials across
+                            different communication channels.
+                        </p>
+
+                        <div class="project-details">
+                            <span>Marketing</span>
+                            <span>Copywriting</span>
+                            <span>Newsletters</span>
+                            <span>Campaigns</span>
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             AI
+        ================================= -->
+
+        <section class="ai-section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <p class="section-number">
+                        04 — AI & CONTENT
+                    </p>
+
+                    <h2>
+                        Human expertise,<br>
+                        AI-assisted workflows.
+                    </h2>
+
+                </div>
+
+
+                <div class="ai-grid">
+
+                    <div class="ai-statement">
+
+                        I use AI as a tool
+                        to improve content
+                        workflows — not as
+                        a replacement for
+                        editorial judgment.
+
+                    </div>
+
+
+                    <div class="ai-text">
+
+                        <p>
+                            In my current role, I use AI tools as part of
+                            content creation and optimization workflows.
+                        </p>
+
+                        <p>
+                            My focus remains on human quality control:
+                            language accuracy, clarity, tone, consistency,
+                            relevance and adaptation to the target audience.
+                        </p>
+
+                        <div class="ai-tools">
+                            <span>ChatGPT</span>
+                            <span>Claude</span>
+                            <span>AI Content</span>
+                            <span>Content Optimization</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             EXPERIENCE
+        ================================= -->
+
+        <section id="experience">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <p class="section-number">
+                        05 — EXPERIENCE
+                    </p>
+
+                    <h2>
+                        Professional<br>
+                        experience
+                    </h2>
+
+                </div>
+
+
+                <div class="experience-list">
+
+
+                    <div class="experience-item">
+
+                        <div class="experience-date">
+                            2024 — 2026
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Copywriter & Translator
+                            </h3>
+
+                            <p class="experience-company">
+                                French | English | Spanish
+                            </p>
+
+                            <ul>
+                                <li>
+                                    Writing, proofreading and optimizing
+                                    marketing and digital content.
+                                </li>
+
+                                <li>
+                                    Optimizing product descriptions for SEO
+                                    and customer engagement.
+                                </li>
+
+                                <li>
+                                    Creating and optimizing AI-powered and
+                                    geo-optimized content.
+                                </li>
+
+                                <li>
+                                    Creating content for newsletters and
+                                    marketing campaigns.
+                                </li>
+
+                                <li>
+                                    Translating and localizing French and
+                                    English content.
+                                </li>
+
+                                <li>
+                                    Monitoring and continuously improving
+                                    e-commerce website content.
+                                </li>
+
+                                <li>
+                                    Conducting competitive intelligence and
+                                    marketing trend analysis.
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="experience-item">
+
+                        <div class="experience-date">
+                            2022 — 2024
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Marketing & Customer Service Assistant Manager
+                            </h3>
+
+                            <p class="experience-company">
+                                Sprachcaffe — Frankfurt, Germany
+                            </p>
+
+                            <ul>
+                                <li>
+                                    Content creation, optimization and
+                                    proofreading.
+                                </li>
+
+                                <li>
+                                    Optimization and proofreading of the
+                                    main website.
+                                </li>
+
+                                <li>
+                                    Creation and improvement of marketing
+                                    and sales materials.
+                                </li>
+
+                                <li>
+                                    Information management and communication
+                                    with B2B and B2C customers.
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="experience-item">
+
+                        <div class="experience-date">
+                            2020 — 2022
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Marketing & Communications Intern
+                            </h3>
+
+                            <p class="experience-company">
+                                Artisans du Monde — Toulouse, France
+                            </p>
+
+                            <ul>
+                                <li>
+                                    Creation and adaptation of marketing
+                                    and communication content.
+                                </li>
+
+                                <li>
+                                    Website optimization and proofreading.
+                                </li>
+
+                                <li>
+                                    Interviews with volunteers.
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="experience-item">
+
+                        <div class="experience-date">
+                            2018 — 2020
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Tourism & International Customer Service Intern
+                            </h3>
+
+                            <p class="experience-company">
+                                Metz Tourist Office — Metz, France
+                            </p>
+
+                            <ul>
+                                <li>
+                                    Welcoming and informing visitors in
+                                    French, English and Spanish.
+                                </li>
+
+                                <li>
+                                    Managing relationships with hotels.
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             EDUCATION
+        ================================= -->
+
+        <section>
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <p class="section-number">
+                        06 — EDUCATION & LANGUAGES
+                    </p>
+
+                    <h2>
+                        International<br>
+                        academic background
+                    </h2>
+
+                </div>
+
+
+                <div class="two-columns">
+
+
+                    <div>
+
+                        <div class="education-item">
+
+                            <p class="education-year">
+                                2020 — 2022
+                            </p>
+
+                            <h3>
+                                Master's Degree in International Business Languages
+                            </h3>
+
+                            <p>
+                                University of Perpignan
+                            </p>
+
+                            <p>
+                                International marketing, analysis of
+                                international issues, specialized translation
+                                into English and Spanish, management,
+                                business and international law.
+                            </p>
+
+                        </div>
+
+
+                        <div class="education-item">
+
+                            <p class="education-year">
+                                2017 — 2020
+                            </p>
+
+                            <h3>
+                                Double Degree in English & Spanish
+                            </h3>
+
+                            <p>
+                                English- and Spanish-speaking cultures and
+                                literatures, literary translation and
+                                translation exercises in English and Spanish.
+                            </p>
+
+                            <p>
+                                Final year completed through the Erasmus
+                                program in Valladolid, Spain.
+                            </p>
+
+                            <p>
+                                Graduated with honors.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 style="margin-bottom: 25px;">
+                            Languages
+                        </h3>
+
+                        <div class="languages-list">
+
+                            <div class="language-row">
+                                <span>French</span>
+                                <span class="language-level">Native</span>
+                            </div>
+
+                            <div class="language-row">
+                                <span>English</span>
+                                <span class="language-level">C1</span>
+                            </div>
+
+                            <div class="language-row">
+                                <span>Spanish</span>
+                                <span class="language-level">C1</span>
+                            </div>
+
+                            <div class="language-row">
+                                <span>German</span>
+                                <span class="language-level">A2</span>
+                            </div>
+
+                        </div>
+
+
+                        <h3 style="margin: 60px 0 25px;">
+                            Tools
+                        </h3>
+
+                        <div class="tools-list">
+
+                            <span class="tool">ChatGPT</span>
+                            <span class="tool">Claude</span>
+                            <span class="tool">Microsoft Office</span>
+                            <span class="tool">Google Workspace</span>
+                            <span class="tool">Trello</span>
+                            <span class="tool">ClickUp</span>
+                            <span class="tool">InDesign</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             CONTACT
+        ================================= -->
+
+        <section id="contact" class="contact">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    07 — CONTACT
+                </p>
+
+                <h2>
+                    Let's work together.
+                </h2>
+
+                <p>
+                    I am open to opportunities in multilingual content,
+                    translation, localization, SEO content, AI-related
+                    language projects and international communication.
+                </p>
+
+                <div class="contact-links">
+
+                    <a
+                        href="mailto:gaelleduthe@yahoo.fr"
+                        class="button button-dark"
+                    >
+                        Email me
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="button button-outline"
+                    >
+                        LinkedIn
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer>
+
+        <div class="container footer-container">
+
+            <span>
+                © 2026 Gaëlle Duthe
+            </span>
+
+            <span>
+                Multilingual Content & Localization Specialist
+            </span>
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>
 ```
