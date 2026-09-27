@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -307,64 +308,120 @@
     }
 
     /* =========================
-       WORK
+       PORTFOLIO
     ========================= */
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+    .portfolio-intro {
+      max-width: 760px;
+      margin-bottom: 45px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
     }
 
-    .project-card {
+    .portfolio-list {
+      display: grid;
+      gap: 24px;
+    }
+
+    .portfolio-item {
       background: var(--white);
       border: 1px solid var(--line);
-      padding: 38px;
-      min-height: 300px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      overflow: hidden;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .project-card:hover {
+    .portfolio-item:hover {
       transform: translateY(-4px);
       box-shadow: 0 18px 40px rgba(0,0,0,0.07);
     }
 
-    .project-category {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1.3px;
-      color: var(--accent);
-      font-weight: 700;
-      margin-bottom: 20px;
+    .portfolio-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--line);
     }
 
-    .project-card h3 {
+    .portfolio-media {
+      background: var(--soft);
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+    }
+
+    .portfolio-media img,
+    .portfolio-media iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: 0;
+    }
+
+    .portfolio-media img {
+      object-fit: cover;
+    }
+
+    .portfolio-content {
+      padding: 38px;
+    }
+
+    .portfolio-content h3 {
       font-size: 29px;
       line-height: 1.15;
       letter-spacing: -1px;
       margin-bottom: 18px;
     }
 
-    .project-card p {
+    .portfolio-content p {
       color: var(--muted);
       font-size: 15px;
       line-height: 1.8;
+      max-width: 850px;
     }
 
-    .project-tags {
+    .portfolio-role {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .portfolio-role strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--accent);
+    }
+
+    .portfolio-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 7px;
-      margin-top: 30px;
+      margin-top: 22px;
     }
 
-    .project-tag {
+    .portfolio-tag {
       padding: 6px 10px;
       background: var(--soft);
       font-size: 11px;
+    }
+
+    .portfolio-link {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 11px 16px;
+      border: 1px solid var(--text);
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .portfolio-link:hover {
+      background: var(--text);
+      color: var(--white);
     }
 
     /* =========================
@@ -646,6 +703,10 @@
         grid-template-columns: 1fr;
         gap: 60px;
       }
+
+      .portfolio-gallery {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 650px) {
@@ -681,8 +742,7 @@
         border-width: 6px;
       }
 
-      .expertise-grid,
-      .projects-grid {
+      .expertise-grid {
         grid-template-columns: 1fr;
       }
 
@@ -691,8 +751,8 @@
         gap: 10px;
       }
 
-      .project-card,
-      .expertise-card {
+      .expertise-card,
+      .portfolio-content {
         padding: 28px;
       }
 
@@ -716,7 +776,7 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#expertise">Expertise</a></li>
-        <li><a href="#work">Work</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -761,8 +821,8 @@
         </div>
 
         <div class="hero-buttons">
-          <a href="#work" class="button primary">
-            View my work
+          <a href="#portfolio" class="button primary">
+            View my portfolio
           </a>
 
           <a href="#contact" class="button secondary">
@@ -918,133 +978,146 @@
 
 
     <!-- =========================
-         SELECTED WORK
+         PORTFOLIO
     ========================= -->
 
-    <section id="work">
+    <section id="portfolio">
 
       <div class="container">
 
         <div class="section-label">
-          03 — Selected Work
+          03 — Portfolio
         </div>
 
         <h2 class="section-title">
-          What I've worked on
+          Selected projects
         </h2>
 
-        <div class="projects-grid">
+        <p class="portfolio-intro">
+          A selection of localization and content projects showing how I
+          adapt international content for French-speaking audiences.
+        </p>
 
-          <article class="project-card">
 
-            <div>
+        <div class="portfolio-list">
+
+
+          <!-- PROJECT 01 -->
+
+          <article class="portfolio-item">
+
+            <div class="portfolio-gallery">
+
+              <div class="portfolio-media">
+                <img
+                  src="beliani-french-days.png"
+                  alt="Beliani French Days campaign adapted for the French market"
+                  loading="lazy"
+                >
+              </div>
+
+              <div class="portfolio-media">
+                <iframe
+                  src="https://www.youtube.com/embed/vOlaXbXcbOA"
+                  title="Beliani — French Days campaign"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen>
+                </iframe>
+              </div>
+
+            </div>
+
+
+            <div class="portfolio-content">
+
               <div class="project-category">
-                E-commerce
+                Beliani · Advertising Localization
               </div>
 
               <h3>
-                SEO E-commerce Content
+                French Days Campaign — French Market Localization
               </h3>
 
               <p>
-                Writing and optimizing product descriptions to improve
-                clarity, customer engagement and search relevance while
-                maintaining a consistent brand voice.
+                I translated and adapted Beliani’s promotional campaign for
+                the French market, including the on-screen copy and
+                promotional messaging for the French Days campaign. I also
+                adapted the voice-over and reviewed the final assets to
+                ensure consistency, accuracy and a natural French tone.
               </p>
-            </div>
 
-            <div class="project-tags">
-              <span class="project-tag">SEO</span>
-              <span class="project-tag">Product Content</span>
-              <span class="project-tag">Copywriting</span>
-              <span class="project-tag">E-commerce</span>
+              <div class="portfolio-role">
+                <strong>My role</strong>
+                EN → FR · Campaign adaptation · Transcreation · Voice-over · Quality assurance
+              </div>
+
+              <div class="portfolio-tags">
+                <span class="portfolio-tag">Localization</span>
+                <span class="portfolio-tag">Transcreation</span>
+                <span class="portfolio-tag">Advertising</span>
+                <span class="portfolio-tag">Voice-over</span>
+                <span class="portfolio-tag">French Market</span>
+              </div>
+
+              <a
+                class="portfolio-link"
+                href="https://www.youtube.com/watch?v=vOlaXbXcbOA"
+                target="_blank"
+                rel="noopener noreferrer">
+                Watch campaign →
+              </a>
+
             </div>
 
           </article>
 
 
-          <article class="project-card">
+          <!-- PROJECT 02 -->
 
-            <div>
+          <article class="portfolio-item">
+
+            <div class="portfolio-media">
+              <img
+                src="beliani-product-content.png"
+                alt="Beliani product page localized for the French-speaking market"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="portfolio-content">
+
               <div class="project-category">
-                Localization
+                Beliani · E-commerce Localization
               </div>
 
               <h3>
-                French ↔ English Localization
+                Product Content Localization — French Market
               </h3>
 
               <p>
-                Translating and adapting content between French and English,
-                with particular attention to meaning, tone, consistency
-                and the expectations of the target audience.
+                I translated and adapted product content for the
+                French-speaking market, ensuring that the descriptions
+                remained clear, engaging and aligned with the brand’s
+                tone of voice and editorial standards.
               </p>
-            </div>
 
-            <div class="project-tags">
-              <span class="project-tag">French</span>
-              <span class="project-tag">English</span>
-              <span class="project-tag">Translation</span>
-              <span class="project-tag">Localization</span>
+              <div class="portfolio-role">
+                <strong>My role</strong>
+                EN → FR · Product copywriting · Localization · Brand voice · Content quality
+              </div>
+
+              <div class="portfolio-tags">
+                <span class="portfolio-tag">E-commerce</span>
+                <span class="portfolio-tag">Product Content</span>
+                <span class="portfolio-tag">Localization</span>
+                <span class="portfolio-tag">Copywriting</span>
+              </div>
+
             </div>
 
           </article>
 
-
-          <article class="project-card">
-
-            <div>
-              <div class="project-category">
-                AI &amp; Content
-              </div>
-
-              <h3>
-                AI-Assisted Content Workflow
-              </h3>
-
-              <p>
-                Using AI tools to support content creation, optimization
-                and ideation while maintaining human control over accuracy,
-                tone, relevance and final editorial quality.
-              </p>
-            </div>
-
-            <div class="project-tags">
-              <span class="project-tag">AI</span>
-              <span class="project-tag">ChatGPT</span>
-              <span class="project-tag">Claude</span>
-              <span class="project-tag">Editing</span>
-            </div>
-
-          </article>
-
-
-          <article class="project-card">
-
-            <div>
-              <div class="project-category">
-                Marketing
-              </div>
-
-              <h3>
-                Marketing &amp; Campaign Content
-              </h3>
-
-              <p>
-                Creating and adapting newsletters, marketing campaigns,
-                sales materials and customer-facing communications for
-                different audiences and channels.
-              </p>
-            </div>
-
-            <div class="project-tags">
-              <span class="project-tag">Marketing</span>
-              <span class="project-tag">Newsletters</span>
-              <span class="project-tag">Content Creation</span>
-              <span class="project-tag">Communication</span>
-            </div>
-
-          </article>
 
         </div>
 
@@ -1064,6 +1137,7 @@
         <div class="ai-grid">
 
           <div>
+
             <div class="section-label">
               AI-assisted work
             </div>
@@ -1072,7 +1146,9 @@
               Human expertise,<br>
               AI-assisted workflows.
             </h2>
+
           </div>
+
 
           <div class="ai-text">
 
@@ -1284,6 +1360,7 @@
 
           </article>
 
+
         </div>
 
       </div>
@@ -1384,6 +1461,7 @@
 
           </div>
 
+
         </div>
 
       </div>
@@ -1434,6 +1512,7 @@
 
         <div class="contact-grid">
 
+
           <div>
 
             <div class="section-label">
@@ -1465,7 +1544,7 @@
             </a>
 
             <a
-           href="https://www.linkedin.com/in/gaelle-duthe-1846861b8/"
+              href="https://www.linkedin.com/in/gaelle-duthe-1846861b8/"
               target="_blank"
               rel="noopener noreferrer"
               class="contact-link"
@@ -1480,6 +1559,7 @@
             </div>
 
           </div>
+
 
         </div>
 
