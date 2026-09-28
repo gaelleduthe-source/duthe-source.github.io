@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Gaëlle Duthe | Multilingual Copywriter &amp; Localization Specialist</title>
+  <title>Gaëlle Duthe | Multilingual Copywriter & Localization Specialist</title>
 
   <meta
     name="description"
@@ -12,20 +13,21 @@
   >
 
   <style>
-:root {
-  --bg: #f8f7f5;
-  --card: #ffffff;
-  --text: #1c1c1f;
-  --muted: #707078;
-  --line: #e8e5e2;
-  --accent: #b86f51;
-  --accent-soft: #f4e9e3;
-  --dark: #202024;
-  --max: 1180px;
-  --sidebar: 320px;
-  --radius: 18px;
-  --shadow: 0 14px 45px rgba(20, 20, 25, .07);
-}
+    :root {
+      --bg: #f8f7f5;
+      --card: #ffffff;
+      --text: #1c1c1f;
+      --muted: #707078;
+      --line: #e8e5e2;
+      --accent: #b86f51;
+      --accent-soft: #f4e9e3;
+      --dark: #202024;
+
+      --max: 1180px;
+      --sidebar: 320px;
+      --radius: 18px;
+      --shadow: 0 14px 45px rgba(20, 20, 25, .07);
+    }
 
     * {
       box-sizing: border-box;
@@ -38,10 +40,19 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
       background: var(--bg);
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.6;
     }
 
     a {
@@ -54,13 +65,17 @@
       display: block;
     }
 
+    /* =========================
+       LAYOUT
+    ========================= */
+
     .site {
-      width: min(calc(100% - 40px), var(--max));
-      margin: 35px auto;
+      max-width: var(--max);
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: var(--sidebar) minmax(0, 1fr);
-      gap: 28px;
-      align-items: start;
+      grid-template-columns: var(--sidebar) 1fr;
+      gap: 70px;
+      padding: 50px 28px;
     }
 
     /* =========================
@@ -69,162 +84,122 @@
 
     .sidebar {
       position: sticky;
-      top: 25px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
+      top: 35px;
+      height: fit-content;
     }
 
     .profile {
-      padding: 34px 30px 28px;
-      text-align: center;
+      text-align: left;
     }
 
     .profile-photo {
-      width: 125px;
-      height: 125px;
-      margin: 0 auto 20px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 5px solid var(--accent-soft);
-      background: #eee;
-    }
-
-    .profile-photo img {
-      width: 100%;
-      height: 100%;
+      width: 150px;
+      height: 150px;
       object-fit: cover;
-      object-position: center 25%;
+      border-radius: 50%;
+      margin-bottom: 24px;
+      border: 5px solid #fff;
+      box-shadow: var(--shadow);
     }
 
     .profile h1 {
-      font-size: 28px;
-      line-height: 1.1;
-      letter-spacing: -.8px;
-      margin-bottom: 11px;
+      font-size: 2rem;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
     }
 
-    .profile-title {
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 1.5;
-      max-width: 250px;
-      margin: 0 auto;
-    }
-
-    .contact-mini {
-      border-top: 1px solid var(--line);
-      padding: 23px 30px;
-      display: grid;
-      gap: 16px;
-    }
-
-    .contact-mini-item {
-      display: grid;
-      grid-template-columns: 27px 1fr;
-      gap: 10px;
-      align-items: start;
-      font-size: 13px;
-    }
-
-    .contact-mini-icon {
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .contact-mini small {
-      display: block;
+    .profile-role {
       color: var(--muted);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 2px;
+      font-size: 0.98rem;
+      line-height: 1.5;
+      margin-bottom: 24px;
     }
 
-    .contact-mini a:hover {
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .contact-info a {
+      transition: color .2s ease;
+    }
+
+    .contact-info a:hover {
       color: var(--accent);
     }
 
-    .sidebar-nav {
+    /* Navigation */
+
+    .nav {
       border-top: 1px solid var(--line);
-      padding: 14px 12px;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
 
-    .sidebar-nav a {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      padding: 12px 16px;
+    .nav a {
+      position: relative;
+      padding: 9px 12px;
+      margin-left: -12px;
       border-radius: 10px;
       color: var(--muted);
-      font-size: 14px;
-      font-weight: 600;
-      transition: .2s ease;
+      font-size: 0.9rem;
+      transition:
+        color .2s ease,
+        background .2s ease;
     }
 
-    .sidebar-nav a:hover,
-    .sidebar-nav a.active {
+    .nav a:hover,
+    .nav a.active {
       color: var(--text);
       background: var(--accent-soft);
     }
 
-    .nav-number {
+    .nav a.active {
       color: var(--accent);
-      font-size: 11px;
-      min-width: 18px;
-    }
-
-    .sidebar-footer {
-      border-top: 1px solid var(--line);
-      padding: 18px 30px;
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.6;
-      text-align: center;
+      font-weight: 600;
     }
 
     /* =========================
        MAIN
     ========================= */
 
-    .main {
+    main {
       min-width: 0;
     }
 
-    .section {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 48px;
-      margin-bottom: 28px;
-      scroll-margin-top: 25px;
+    section {
+      scroll-margin-top: 35px;
+      margin-bottom: 110px;
     }
 
     .section-label {
       color: var(--accent);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
+      font-size: 0.75rem;
       text-transform: uppercase;
+      letter-spacing: .14em;
+      font-weight: 700;
       margin-bottom: 12px;
     }
 
-    .section-title {
-      font-size: clamp(34px, 4vw, 48px);
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
       line-height: 1.05;
-      letter-spacing: -2px;
+      letter-spacing: -0.045em;
       margin-bottom: 25px;
     }
 
-    .lead {
-      font-size: 18px;
+    .intro {
+      font-size: 1.15rem;
+      color: #424248;
+      max-width: 760px;
       line-height: 1.75;
-      color: var(--muted);
-      max-width: 780px;
     }
 
     /* =========================
@@ -232,36 +207,14 @@
     ========================= */
 
     .about-highlight {
-      margin: 30px 0;
-      padding: 25px 28px;
-      background: var(--accent-soft);
-      border-radius: 13px;
-      border-left: 4px solid var(--accent);
-      font-size: 20px;
-      line-height: 1.5;
-    }
-
-    .about-columns {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      margin-top: 30px;
-    }
-
-    .about-card {
-      padding: 24px;
+      margin-top: 35px;
+      padding: 28px 30px;
+      background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 14px;
-    }
-
-    .about-card h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    .about-card p {
-      color: var(--muted);
-      font-size: 14px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      font-size: 1.08rem;
+      line-height: 1.7;
     }
 
     /* =========================
@@ -271,418 +224,328 @@
     .expertise-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
+      gap: 16px;
     }
 
     .expertise-card {
+      background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 23px;
-      transition: .2s ease;
+      border-radius: var(--radius);
+      padding: 26px;
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease;
     }
 
     .expertise-card:hover {
-      border-color: #d4b3a4;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .expertise-number {
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 700;
+      margin-bottom: 15px;
     }
 
     .expertise-card h3 {
-      font-size: 18px;
+      font-size: 1.1rem;
       margin-bottom: 7px;
     }
 
     .expertise-card p {
       color: var(--muted);
-      font-size: 13px;
-    }
-
-    .skill-icon {
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 800;
-      margin-bottom: 15px;
+      font-size: .9rem;
     }
 
     /* =========================
-       PORTFOLIO
+       PORTFOLIO FILTERS
     ========================= */
-
-    .portfolio-intro {
-      color: var(--muted);
-      margin-bottom: 28px;
-      max-width: 760px;
-    }
 
     .filters {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 28px;
+      margin-bottom: 30px;
     }
 
     .filter-btn {
       border: 1px solid var(--line);
-      background: #fff;
+      background: var(--card);
       color: var(--muted);
-      padding: 8px 13px;
-      border-radius: 30px;
-      font: inherit;
-      font-size: 12px;
+      border-radius: 999px;
+      padding: 8px 15px;
+      font-family: inherit;
+      font-size: .82rem;
       cursor: pointer;
-      transition: .2s ease;
+      transition: all .2s ease;
     }
 
     .filter-btn:hover,
     .filter-btn.active {
-      background: var(--text);
-      border-color: var(--text);
-      color: #fff;
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
     }
+
+    /* =========================
+       PORTFOLIO GRID
+    ========================= */
 
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+      gap: 22px;
     }
 
-    .portfolio-card {
+    .project {
+      background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 15px;
+      border-radius: var(--radius);
       overflow: hidden;
-      background: #fff;
-      transition: .25s ease;
+      box-shadow: 0 8px 30px rgba(20, 20, 25, .04);
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease;
     }
 
-    .portfolio-card:hover {
+    .project:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 35px rgba(20,20,25,.08);
+      box-shadow: var(--shadow);
     }
 
-    .portfolio-card.wide {
-      grid-column: 1 / -1;
+    .project.hidden {
+      display: none;
     }
 
-    .portfolio-media {
+    .project-image {
       aspect-ratio: 16 / 10;
-      background: #ececec;
       overflow: hidden;
+      background: #eee;
     }
 
-    .portfolio-media iframe,
-    .portfolio-media img {
+    .project-image img {
       width: 100%;
       height: 100%;
-      border: 0;
       object-fit: cover;
+      transition: transform .4s ease;
     }
 
-    .campaign-media {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--line);
+    .project:hover .project-image img {
+      transform: scale(1.025);
     }
 
-    .campaign-media .portfolio-media {
-      aspect-ratio: 16 / 9;
+    .project-content {
+      padding: 24px;
     }
 
-    .portfolio-body {
-      padding: 25px;
-    }
-
-    .portfolio-category {
+    .project-category {
       color: var(--accent);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 1px;
+      font-size: .7rem;
       text-transform: uppercase;
+      letter-spacing: .12em;
+      font-weight: 700;
+      margin-bottom: 9px;
+    }
+
+    .project h3 {
+      font-size: 1.25rem;
+      line-height: 1.25;
       margin-bottom: 10px;
     }
 
-    .portfolio-body h3 {
-      font-size: 22px;
-      line-height: 1.2;
-      letter-spacing: -.6px;
-      margin-bottom: 11px;
-    }
-
-    .portfolio-body p {
+    .project-description {
       color: var(--muted);
-      font-size: 13px;
-      line-height: 1.7;
+      font-size: .9rem;
+      line-height: 1.65;
+      margin-bottom: 17px;
     }
 
-    .portfolio-meta {
-      margin-top: 18px;
-      padding-top: 15px;
-      border-top: 1px solid var(--line);
-      font-size: 12px;
+    .project-meta {
+      color: #55555c;
+      font-size: .78rem;
       line-height: 1.6;
-    }
-
-    .portfolio-meta strong {
-      color: var(--text);
-      display: block;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 3px;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 15px;
-    }
-
-    .tag {
-      background: var(--bg);
-      padding: 5px 8px;
-      border-radius: 5px;
-      font-size: 10px;
-      color: var(--muted);
-    }
-
-    .portfolio-link {
-      display: inline-block;
-      margin-top: 18px;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--accent);
     }
 
     /* =========================
        NEWSLETTER PROJECT
     ========================= */
 
-    .newsletter-media {
-      background: #f8f6f5;
-      padding: 10px;
+    .project-newsletter {
+      grid-column: 1 / -1;
+    }
+
+    .newsletter-gallery {
       display: grid;
-      gap: 10px;
+      grid-template-columns: 1.15fr .85fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 8px;
+      height: 430px;
+      background: #eee;
+      padding: 8px;
     }
 
-    .newsletter-media-main {
+    .newsletter-gallery img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 10px;
+      background: white;
+    }
+
+    .newsletter-gallery img:first-child {
+      grid-row: 1 / 3;
+    }
+
+    .newsletter-gallery img:nth-child(2),
+    .newsletter-gallery img:nth-child(3) {
+      min-height: 0;
+    }
+
+    .newsletter-content {
+      padding: 28px;
+    }
+
+    .newsletter-content h3 {
+      font-size: 1.45rem;
+      margin-bottom: 10px;
+    }
+
+    .newsletter-content .project-description {
+      max-width: 800px;
+    }
+
+    /* =========================
+       VIDEO
+    ========================= */
+
+    .video-wrapper {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: #111;
       overflow: hidden;
-      background: #fff;
     }
 
-    .newsletter-media-main a,
-    .newsletter-media-bottom a {
-      display: block;
-    }
-
-    .newsletter-media-main img {
+    .video-wrapper iframe {
       width: 100%;
-      height: auto;
-      display: block;
-      transition: transform .3s ease;
-    }
-
-    .newsletter-media-bottom {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .newsletter-media-bottom a {
-      overflow: hidden;
-      background: #fff;
-    }
-
-    .newsletter-media-bottom img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: transform .3s ease;
-    }
-
-    .newsletter-media a:hover img {
-      transform: scale(1.015);
+      height: 100%;
+      border: 0;
     }
 
     /* =========================
        RESUME
     ========================= */
 
-    .resume-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
+    .resume-block {
+      margin-bottom: 42px;
     }
 
-    .resume-column h3 {
-      font-size: 20px;
+    .resume-block h3 {
+      font-size: 1.15rem;
       margin-bottom: 20px;
     }
 
     .timeline {
-      border-left: 2px solid var(--accent-soft);
-      padding-left: 23px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
     }
 
     .timeline-item {
-      position: relative;
-      margin-bottom: 30px;
-    }
-
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background: var(--accent);
-      border-radius: 50%;
-      left: -29px;
-      top: 6px;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 20px;
     }
 
     .timeline-date {
       color: var(--accent);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .6px;
-      text-transform: uppercase;
-      margin-bottom: 4px;
+      font-size: .78rem;
+      font-weight: 700;
+      line-height: 1.5;
     }
 
-    .timeline-item h4 {
-      font-size: 17px;
-      line-height: 1.3;
+    .timeline-content h4 {
+      font-size: 1rem;
       margin-bottom: 3px;
     }
 
-    .timeline-company {
+    .timeline-content p {
       color: var(--muted);
-      font-size: 12px;
-      margin-bottom: 10px;
+      font-size: .88rem;
     }
 
-    .timeline-item ul {
-      padding-left: 17px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .timeline-item li {
-      margin-bottom: 5px;
-    }
-
-    .education-list {
+    .resume-list {
       display: grid;
-      gap: 14px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 30px;
     }
 
-    .education-item {
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-    }
-
-    .education-year {
-      color: var(--accent);
-      font-size: 10px;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 5px;
-    }
-
-    .education-item strong {
-      display: block;
-      font-size: 14px;
-      line-height: 1.4;
-    }
-
-    .education-item span {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .languages {
-      margin-top: 25px;
-    }
-
-    .languages h3 {
-      font-size: 20px;
-      margin-bottom: 14px;
-    }
-
-    .language {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--line);
-      padding: 10px 0;
-      font-size: 13px;
-    }
-
-    .language span {
+    .resume-list div {
+      font-size: .9rem;
       color: var(--muted);
     }
 
-    /* =========================
-       TOOLS
-    ========================= */
-
-    .tool-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tool {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 9px 12px;
-      font-size: 12px;
-      background: #fff;
+    .resume-list strong {
+      color: var(--text);
     }
 
     /* =========================
        CONTACT
     ========================= */
 
-    .contact-box {
+    .contact-card {
       background: var(--dark);
-      color: #fff;
-      border-radius: 16px;
-      padding: 35px;
+      color: white;
+      padding: 40px;
+      border-radius: var(--radius);
     }
 
-    .contact-box .section-label {
-      color: #dca58e;
+    .contact-card .section-label {
+      color: #d9a38c;
     }
 
-    .contact-box .section-title {
+    .contact-card h2 {
       margin-bottom: 15px;
     }
 
-    .contact-box p {
-      color: #c6c6ca;
-      max-width: 650px;
+    .contact-card p {
+      color: #c8c8cc;
+      max-width: 620px;
       margin-bottom: 25px;
     }
 
-    .contact-actions {
+    .contact-links {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
 
-    .contact-button {
+    .contact-link {
       display: inline-block;
-      border: 1px solid #55555a;
-      padding: 11px 15px;
-      border-radius: 8px;
-      font-size: 12px;
-      transition: .2s ease;
+      background: white;
+      color: var(--dark);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: .85rem;
+      font-weight: 600;
+      transition: transform .2s ease;
     }
 
-    .contact-button:hover {
-      background: #fff;
-      color: var(--dark);
+    .contact-link:hover {
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      color: var(--muted);
+      font-size: .78rem;
+      padding-top: 25px;
+      border-top: 1px solid var(--line);
     }
 
     /* =========================
@@ -693,113 +556,99 @@
 
       .site {
         grid-template-columns: 1fr;
-        margin-top: 20px;
+        gap: 45px;
       }
 
       .sidebar {
         position: relative;
-        top: 0;
+        top: auto;
       }
 
       .profile {
         display: grid;
-        grid-template-columns: 110px 1fr;
-        gap: 20px;
-        text-align: left;
+        grid-template-columns: 120px 1fr;
+        column-gap: 25px;
         align-items: center;
       }
 
       .profile-photo {
-        width: 110px;
-        height: 110px;
-        margin: 0;
+        width: 120px;
+        height: 120px;
+        grid-row: span 3;
+        margin-bottom: 0;
       }
 
-      .profile-title {
-        margin: 0;
-        max-width: none;
+      .contact-info {
+        margin-bottom: 20px;
       }
 
-      .sidebar-nav {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
+      .nav {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        flex-wrap: wrap;
       }
 
-      .sidebar-nav a {
-        justify-content: center;
-        padding: 10px 5px;
-        font-size: 11px;
-      }
-
-      .nav-number {
-        display: none;
+      .nav a {
+        margin-left: 0;
       }
     }
 
     @media (max-width: 700px) {
 
       .site {
-        width: min(calc(100% - 24px), var(--max));
+        padding: 30px 18px;
       }
 
-      .section {
-        padding: 30px 22px;
-        border-radius: 14px;
+      section {
+        margin-bottom: 75px;
       }
 
       .profile {
         display: block;
-        text-align: center;
       }
 
       .profile-photo {
-        margin: 0 auto 16px;
+        margin-bottom: 18px;
       }
 
-      .profile-title {
-        max-width: 260px;
-        margin: 0 auto;
+      .profile h1 {
+        font-size: 1.7rem;
       }
 
-      .contact-mini {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .sidebar-nav {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .about-columns,
       .expertise-grid,
-      .resume-grid,
-      .portfolio-grid {
+      .portfolio-grid,
+      .resume-list {
         grid-template-columns: 1fr;
       }
 
-      .portfolio-card.wide {
+      .project-newsletter {
         grid-column: auto;
       }
 
-      .campaign-media {
+      .newsletter-gallery {
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 250px 180px;
+      }
+
+      .newsletter-gallery img:first-child {
+        grid-column: 1 / -1;
+        grid-row: auto;
+      }
+
+      .newsletter-gallery img:nth-child(2),
+      .newsletter-gallery img:nth-child(3) {
+        grid-row: auto;
+      }
+
+      .timeline-item {
         grid-template-columns: 1fr;
+        gap: 5px;
       }
 
-      .newsletter-media {
-        padding: 6px;
-        gap: 6px;
-      }
-
-      .newsletter-media-bottom {
-        grid-template-columns: 1fr;
-        gap: 6px;
-      }
-
-      .section-title {
-        letter-spacing: -1.5px;
-      }
-
-      .contact-box {
-        padding: 26px 22px;
+      .contact-card {
+        padding: 28px;
       }
     }
   </style>
@@ -810,218 +659,116 @@
   <div class="site">
 
     <!-- =========================
-         LEFT PROFILE PANEL
+         SIDEBAR
     ========================= -->
 
     <aside class="sidebar">
 
       <div class="profile">
 
-        <div class="profile-photo">
-          <img
-            src="Duthe Gaelle Photo.png"
-            alt="Gaëlle Duthe"
+        <img
+          class="profile-photo"
+          src="Duthe Gaelle Photo.png"
+          alt="Gaëlle Duthe"
+        >
+
+        <h1>Gaëlle Duthe</h1>
+
+        <p class="profile-role">
+          Multilingual Copywriter &<br>
+          Localization Specialist
+        </p>
+
+        <div class="contact-info">
+
+          <a href="mailto:gaelleduthe@yahoo.fr">
+            gaelleduthe@yahoo.fr
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/gaelle-duthe-1846861b/"
+            target="_blank"
+            rel="noopener"
           >
-        </div>
+            LinkedIn
+          </a>
 
-        <div>
-          <h1>Gaëlle Duthe</h1>
-
-          <div class="profile-title">
-            Multilingual Copywriter &amp; Localization Specialist
-          </div>
         </div>
 
       </div>
 
+      <nav class="nav" aria-label="Main navigation">
 
-      <div class="contact-mini">
+        <a href="#about">About</a>
 
-        <div class="contact-mini-item">
-          <div class="contact-mini-icon">@</div>
+        <a href="#expertise">Expertise</a>
 
-          <div>
-            <small>Email</small>
+        <a href="#portfolio">Portfolio</a>
 
-            <a href="mailto:gaelleduthe@yahoo.fr">
-              gaelleduthe@yahoo.fr
-            </a>
-          </div>
-        </div>
+        <a href="#resume">Resume</a>
 
-
-        <div class="contact-mini-item">
-          <div class="contact-mini-icon">in</div>
-
-          <div>
-            <small>LinkedIn</small>
-
-            <a
-              href="https://www.linkedin.com/in/gaelle-duthe-1846861b8/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn profile
-            </a>
-          </div>
-        </div>
-
-
-        <div class="contact-mini-item">
-          <div class="contact-mini-icon">FR</div>
-
-          <div>
-            <small>Location</small>
-            Metz, France
-          </div>
-        </div>
-
-
-        <div class="contact-mini-item">
-          <div class="contact-mini-icon">EN</div>
-
-          <div>
-            <small>Languages</small>
-            French · English · Spanish
-          </div>
-        </div>
-
-      </div>
-
-
-      <nav class="sidebar-nav">
-
-        <a href="#about" class="active">
-          <span class="nav-number">01</span>
-          About
-        </a>
-
-        <a href="#expertise">
-          <span class="nav-number">02</span>
-          Expertise
-        </a>
-
-        <a href="#portfolio">
-          <span class="nav-number">03</span>
-          Portfolio
-        </a>
-
-        <a href="#resume">
-          <span class="nav-number">04</span>
-          Resume
-        </a>
-
-        <a href="#contact">
-          <span class="nav-number">05</span>
-          Contact
-        </a>
+        <a href="#contact">Contact</a>
 
       </nav>
-
-
-      <div class="sidebar-footer">
-        Available for content, localization &amp; copywriting opportunities.
-      </div>
 
     </aside>
 
 
     <!-- =========================
-         MAIN CONTENT
+         MAIN
     ========================= -->
 
-    <main class="main">
+    <main>
 
+      <!-- =========================
+           ABOUT
+      ========================= -->
 
-      <!-- ABOUT -->
-
-      <section id="about" class="section">
+      <section id="about">
 
         <div class="section-label">
-          01 — About me
+          About
         </div>
 
-        <h2 class="section-title">
-          Multilingual content with a human touch.
+        <h2>
+          Words that work<br>
+          across languages.
         </h2>
 
-        <p class="lead">
+        <p class="intro">
           I create, translate, localize and optimize digital content
           for French-speaking and international audiences, combining
-          editorial expertise with marketing, SEO/GEO and AI-assisted
-          workflows.
+          editorial expertise with marketing, SEO/GEO and AI-assisted workflows.
         </p>
 
         <div class="about-highlight">
-          Clear words. Natural localization. Content adapted to the
-          audience — not simply translated word for word.
-        </div>
-
-        <div class="about-columns">
-
-          <div class="about-card">
-            <h3>Content &amp; Copywriting</h3>
-
-            <p>
-              Website content, product descriptions, marketing copy,
-              campaigns, newsletters and customer-facing communications.
-            </p>
-          </div>
-
-
-          <div class="about-card">
-            <h3>Localization</h3>
-
-            <p>
-              Adapting international content to French-speaking audiences
-              while preserving meaning, tone, brand identity and context.
-            </p>
-          </div>
-
-
-          <div class="about-card">
-            <h3>SEO &amp; GEO</h3>
-
-            <p>
-              Content structured around relevance, readability, search
-              intent and emerging AI-powered search experiences.
-            </p>
-          </div>
-
-
-          <div class="about-card">
-            <h3>AI-assisted workflow</h3>
-
-            <p>
-              Using AI for ideation, drafting and optimization while keeping
-              human proofreading, linguistic accuracy and editorial judgment
-              at the center.
-            </p>
-          </div>
-
+          <strong>Clear words. Natural localization.</strong><br>
+          Content adapted to the audience — not simply translated word for word.
         </div>
 
       </section>
 
 
-      <!-- EXPERTISE -->
+      <!-- =========================
+           EXPERTISE
+      ========================= -->
 
-      <section id="expertise" class="section">
+      <section id="expertise">
 
         <div class="section-label">
-          02 — What I do
+          Expertise
         </div>
 
-        <h2 class="section-title">
-          Expertise
+        <h2>
+          What I do
         </h2>
 
         <div class="expertise-grid">
 
-          <article class="expertise-card">
+          <div class="expertise-card">
 
-            <div class="skill-icon">
-              01 / COPY
+            <div class="expertise-number">
+              01
             </div>
 
             <h3>
@@ -1029,17 +776,17 @@
             </h3>
 
             <p>
-              Clear, engaging and audience-focused content for digital
-              platforms, marketing campaigns and e-commerce.
+              Engaging and conversion-focused content adapted to
+              brand identity and audience.
             </p>
 
-          </article>
+          </div>
 
 
-          <article class="expertise-card">
+          <div class="expertise-card">
 
-            <div class="skill-icon">
-              02 / TRANSLATION
+            <div class="expertise-number">
+              02
             </div>
 
             <h3>
@@ -1047,17 +794,17 @@
             </h3>
 
             <p>
-              French and English translation with attention to meaning,
-              terminology, tone and context.
+              English and Spanish to French translation with a focus
+              on accuracy, fluency and natural language.
             </p>
 
-          </article>
+          </div>
 
 
-          <article class="expertise-card">
+          <div class="expertise-card">
 
-            <div class="skill-icon">
-              03 / LOCALIZATION
+            <div class="expertise-number">
+              03
             </div>
 
             <h3>
@@ -1065,17 +812,17 @@
             </h3>
 
             <p>
-              Cultural and linguistic adaptation for international markets,
-              rather than literal word-for-word translation.
+              Adapting content, tone and messaging to French-speaking
+              audiences and cultural expectations.
             </p>
 
-          </article>
+          </div>
 
 
-          <article class="expertise-card">
+          <div class="expertise-card">
 
-            <div class="skill-icon">
-              04 / SEO
+            <div class="expertise-number">
+              04
             </div>
 
             <h3>
@@ -1083,17 +830,17 @@
             </h3>
 
             <p>
-              Content optimization focused on relevance, readability,
-              search intent and organic visibility.
+              Search-focused content combining readability,
+              structure and keyword strategy.
             </p>
 
-          </article>
+          </div>
 
 
-          <article class="expertise-card">
+          <div class="expertise-card">
 
-            <div class="skill-icon">
-              05 / GEO
+            <div class="expertise-number">
+              05
             </div>
 
             <h3>
@@ -1101,69 +848,76 @@
             </h3>
 
             <p>
-              Content prepared for emerging generative and AI-powered
-              search experiences.
+              Content structured to improve visibility and relevance
+              across AI-powered search experiences.
             </p>
 
-          </article>
+          </div>
 
 
-          <article class="expertise-card">
+          <div class="expertise-card">
 
-            <div class="skill-icon">
-              06 / EDITING
+            <div class="expertise-number">
+              06
             </div>
 
             <h3>
-              Editing &amp; Proofreading
+              Editing & Proofreading
             </h3>
 
             <p>
-              Rewriting, proofreading and quality checks for clarity,
-              consistency, accuracy and natural language.
+              Editorial review, proofreading and quality assurance
+              for polished final content.
             </p>
 
-          </article>
+          </div>
 
         </div>
 
       </section>
 
 
-      <!-- PORTFOLIO -->
+      <!-- =========================
+           PORTFOLIO
+      ========================= -->
 
-      <section id="portfolio" class="section">
+      <section id="portfolio">
 
         <div class="section-label">
-          03 — Selected work
+          Portfolio
         </div>
 
-        <h2 class="section-title">
-          Portfolio
+        <h2>
+          Selected work
         </h2>
-
-        <p class="portfolio-intro">
-          A selection of localization and content projects. The examples
-          below focus on how I adapt international campaigns and
-          e-commerce content for French-speaking audiences.
-        </p>
-
 
         <div class="filters">
 
-          <button class="filter-btn active" data-filter="all">
+          <button
+            class="filter-btn active"
+            data-filter="all"
+          >
             All
           </button>
 
-          <button class="filter-btn" data-filter="localization">
+          <button
+            class="filter-btn"
+            data-filter="localization"
+          >
             Localization
           </button>
 
-          <button class="filter-btn" data-filter="copywriting">
+          <button
+            class="filter-btn"
+            data-filter="copywriting"
+          >
             Copywriting
           </button>
 
-          <button class="filter-btn" data-filter="ecommerce">
+          <button
+            class="filter-btn"
+            data-filter="ecommerce"
+          >
             E-commerce
           </button>
 
@@ -1173,174 +927,87 @@
         <div class="portfolio-grid">
 
 
-          <!-- FRENCH DAYS -->
+          <!-- =========================
+               PROJECT 1
+          ========================= -->
 
           <article
-            class="portfolio-card wide"
+            class="project"
             data-category="localization copywriting"
           >
 
-            <div class="campaign-media">
+            <div class="project-image">
 
-              <div class="portfolio-media">
-
-                <img
-                  src="beliani-french-days.png"
-                  alt="Beliani French Days campaign adapted for the French market"
-                  loading="lazy"
-                >
-
-              </div>
-
-
-              <div class="portfolio-media">
-
-                <iframe
-                  src="https://www.youtube.com/embed/vOlaXbXcbOA"
-                  title="Beliani — French Days campaign"
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen>
-                </iframe>
-
-              </div>
+              <img
+                src="beliani-french-days.png"
+                alt="Beliani French Days campaign"
+              >
 
             </div>
 
+            <div class="project-content">
 
-            <div class="portfolio-body">
-
-              <div class="portfolio-category">
-                Beliani · Advertising Localization
+              <div class="project-category">
+                Localization · Copywriting
               </div>
 
               <h3>
-                French Days Campaign — French Market Localization
+                Beliani French Days Campaign
               </h3>
 
-              <p>
-                I translated and adapted Beliani’s promotional campaign for
-                the French market, including the on-screen copy and
-                promotional messaging for the French Days campaign. I also
-                adapted the voice-over and reviewed the final assets to
-                ensure consistency, accuracy and a natural French tone.
+              <p class="project-description">
+                French adaptation of a promotional campaign,
+                combining transcreation, localization and
+                brand voice adaptation for the French market.
               </p>
 
-              <div class="portfolio-meta">
-
-                <strong>
-                  My role
-                </strong>
-
-                EN → FR · Campaign adaptation · Transcreation · Voice-over · Quality assurance
-
+              <div class="project-meta">
+                EN → FR · Campaign adaptation · Transcreation ·
+                Voice-over · Quality assurance
               </div>
-
-
-              <div class="tags">
-
-                <span class="tag">
-                  Localization
-                </span>
-
-                <span class="tag">
-                  Transcreation
-                </span>
-
-                <span class="tag">
-                  Advertising
-                </span>
-
-                <span class="tag">
-                  Voice-over
-                </span>
-
-                <span class="tag">
-                  French Market
-                </span>
-
-              </div>
-
-
-              <a
-                class="portfolio-link"
-                href="https://www.youtube.com/watch?v=vOlaXbXcbOA"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Watch campaign →
-              </a>
 
             </div>
 
           </article>
 
 
-          <!-- PRODUCT CONTENT -->
+          <!-- =========================
+               PROJECT 2
+          ========================= -->
 
           <article
-            class="portfolio-card"
+            class="project"
             data-category="localization copywriting ecommerce"
           >
 
-            <div class="portfolio-media">
+            <div class="project-image">
 
               <img
                 src="beliani-product-content.png"
-                alt="Beliani product page localized for the French-speaking market"
-                loading="lazy"
+                alt="Beliani product content localization"
               >
 
             </div>
 
+            <div class="project-content">
 
-            <div class="portfolio-body">
-
-              <div class="portfolio-category">
-                Beliani · E-commerce Localization
+              <div class="project-category">
+                Localization · E-commerce
               </div>
 
               <h3>
-                Product Content Localization
+                Beliani Product Content Localization
               </h3>
 
-              <p>
-                I translated and adapted product content for the
-                French-speaking market, ensuring that the descriptions
-                remained clear, engaging and aligned with the brand’s
-                tone of voice and editorial standards.
+              <p class="project-description">
+                Localization of product content for the French
+                market, with attention to natural language,
+                clarity, consistency and e-commerce tone of voice.
               </p>
 
-
-              <div class="portfolio-meta">
-
-                <strong>
-                  My role
-                </strong>
-
-                EN → FR · Product copywriting · Localization · Brand voice · Content quality
-
-              </div>
-
-
-              <div class="tags">
-
-                <span class="tag">
-                  E-commerce
-                </span>
-
-                <span class="tag">
-                  Product Content
-                </span>
-
-                <span class="tag">
-                  Localization
-                </span>
-
-                <span class="tag">
-                  Copywriting
-                </span>
-
+              <div class="project-meta">
+                EN → FR · Product localization · E-commerce ·
+                Content adaptation
               </div>
 
             </div>
@@ -1348,128 +1015,56 @@
           </article>
 
 
-          <!-- CHRISTMAS PROMOTIONAL NEWSLETTER -->
+          <!-- =========================
+               PROJECT 3 — NEWSLETTER
+          ========================= -->
 
           <article
-            class="portfolio-card wide"
+            class="project project-newsletter"
             data-category="localization copywriting"
           >
 
-            <div class="newsletter-media">
+            <div class="newsletter-gallery">
 
-              <!-- Main newsletter screenshot -->
+              <img
+                src="images/newsletter-1.png"
+                alt="Newsletter localization project - screenshot 1"
+              >
 
-              <div class="newsletter-media-main">
+              <img
+                src="images/newsletter-2.png"
+                alt="Newsletter localization project - screenshot 2"
+              >
 
-                <a
-                  href="newsletter-hero.png"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-
-                  <img
-                    src="newsletter-hero.png"
-                    alt="Christmas promotional newsletter — hero section"
-                    loading="lazy"
-                  >
-
-                </a>
-
-              </div>
-
-
-              <!-- Additional newsletter screenshots -->
-
-              <div class="newsletter-media-bottom">
-
-                <a
-                  href="newsletter-products.png"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-
-                  <img
-                    src="newsletter-products.png"
-                    alt="Christmas promotional newsletter — product selection"
-                    loading="lazy"
-                  >
-
-                </a>
-
-
-                <a
-                  href="newsletter-offer.png"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-
-                  <img
-                    src="newsletter-offer.png"
-                    alt="Christmas promotional newsletter — promotional offer"
-                    loading="lazy"
-                  >
-
-                </a>
-
-              </div>
+              <img
+                src="images/newsletter-3.png"
+                alt="Newsletter localization project - screenshot 3"
+              >
 
             </div>
 
+            <div class="newsletter-content">
 
-            <div class="portfolio-body">
-
-              <div class="portfolio-category">
-                Marketing Translation &amp; Localization
+              <div class="project-category">
+                Localization · Copywriting
               </div>
-
 
               <h3>
-                Christmas Promotional Newsletter
+                Newsletter Localization & Content Adaptation
               </h3>
 
-
-              <p>
-                Translation and localization of a Christmas promotional
-                newsletter for the French market. I adapted the marketing
-                copy, promotional messaging, product descriptions and calls
-                to action to ensure a natural and engaging French version
-                while preserving the original campaign objectives and brand tone.
+              <p class="project-description">
+                Translation and adaptation of a newsletter for a
+                French-speaking audience. The project focused on
+                natural language, tone of voice, readability and
+                cultural relevance, going beyond word-for-word
+                translation to create content that feels natural
+                to French readers.
               </p>
 
-
-              <div class="portfolio-meta">
-
-                <strong>
-                  My role
-                </strong>
-
-                EN → FR · Marketing translation · Localization · Copy adaptation · Transcreation
-
-              </div>
-
-
-              <div class="tags">
-
-                <span class="tag">
-                  Translation
-                </span>
-
-                <span class="tag">
-                  Localization
-                </span>
-
-                <span class="tag">
-                  Marketing Copy
-                </span>
-
-                <span class="tag">
-                  Transcreation
-                </span>
-
-                <span class="tag">
-                  EN → FR
-                </span>
-
+              <div class="project-meta">
+                EN → FR · Translation · Localization · Copywriting ·
+                Content adaptation · Editorial quality
               </div>
 
             </div>
@@ -1482,301 +1077,236 @@
       </section>
 
 
-      <!-- RESUME -->
+      <!-- =========================
+           RESUME
+      ========================= -->
 
-      <section id="resume" class="section">
+      <section id="resume">
 
         <div class="section-label">
-          04 — Resume
+          Resume
         </div>
 
-        <h2 class="section-title">
-          Experience &amp; background
+        <h2>
+          Experience & education
         </h2>
 
 
-        <div class="resume-grid">
+        <div class="resume-block">
+
+          <h3>
+            Professional Experience
+          </h3>
+
+          <div class="timeline">
 
 
-          <div class="resume-column">
+            <div class="timeline-item">
 
-            <h3>
-              Experience
-            </h3>
+              <div class="timeline-date">
+                2024—2026
+              </div>
 
-
-            <div class="timeline">
-
-
-              <article class="timeline-item">
-
-                <div class="timeline-date">
-                  2024 — 2026
-                </div>
+              <div class="timeline-content">
 
                 <h4>
-                  Copywriter &amp; Translator
+                  Copywriter & Translator
                 </h4>
 
-                <div class="timeline-company">
-                  French | English | Spanish
-                </div>
+                <p>
+                  French · English · Spanish
+                </p>
 
-                <ul>
+              </div>
 
-                  <li>
-                    Writing, proofreading and optimizing marketing and
-                    digital content.
-                  </li>
-
-                  <li>
-                    Optimizing product descriptions for SEO and
-                    customer engagement.
-                  </li>
-
-                  <li>
-                    Creating and optimizing AI-assisted and
-                    GEO-oriented content.
-                  </li>
-
-                  <li>
-                    Creating newsletters and marketing campaigns.
-                  </li>
-
-                  <li>
-                    Translating and localizing French and English content.
-                  </li>
-
-                  <li>
-                    Monitoring and continuously improving e-commerce
-                    website content.
-                  </li>
-
-                </ul>
-
-              </article>
+            </div>
 
 
-              <article class="timeline-item">
+            <div class="timeline-item">
 
-                <div class="timeline-date">
-                  2022 — 2024
-                </div>
+              <div class="timeline-date">
+                2022—2024
+              </div>
+
+              <div class="timeline-content">
 
                 <h4>
-                  Marketing &amp; Customer Service Assistant Manager
+                  Marketing & Customer Service Assistant Manager
                 </h4>
 
-                <div class="timeline-company">
+                <p>
                   Sprachcaffe — Frankfurt, Germany
-                </div>
+                </p>
 
-                <ul>
+              </div>
 
-                  <li>
-                    Creating, optimizing and proofreading content.
-                  </li>
-
-                  <li>
-                    Optimizing and proofreading website content.
-                  </li>
-
-                  <li>
-                    Creating marketing and sales materials.
-                  </li>
-
-                  <li>
-                    Managing B2B and B2C customer communication.
-                  </li>
-
-                </ul>
-
-              </article>
+            </div>
 
 
-              <article class="timeline-item">
+            <div class="timeline-item">
 
-                <div class="timeline-date">
-                  2020 — 2022
-                </div>
+              <div class="timeline-date">
+                2020—2022
+              </div>
+
+              <div class="timeline-content">
 
                 <h4>
-                  Marketing &amp; Communications Intern
+                  Marketing & Communications Intern
                 </h4>
 
-                <div class="timeline-company">
+                <p>
                   Artisans du Monde — Toulouse, France
-                </div>
+                </p>
 
-                <ul>
+              </div>
 
-                  <li>
-                    Creating and adapting marketing and communication
-                    content.
-                  </li>
-
-                  <li>
-                    Optimizing and proofreading website content.
-                  </li>
-
-                  <li>
-                    Conducting interviews with volunteers.
-                  </li>
-
-                </ul>
-
-              </article>
+            </div>
 
 
-              <article class="timeline-item">
+            <div class="timeline-item">
 
-                <div class="timeline-date">
-                  2018 — 2020
-                </div>
+              <div class="timeline-date">
+                2018—2020
+              </div>
+
+              <div class="timeline-content">
 
                 <h4>
-                  Tourism &amp; International Customer Service Intern
+                  Tourism & International Customer Service Intern
                 </h4>
 
-                <div class="timeline-company">
+                <p>
                   Metz Tourist Office — Metz, France
-                </div>
+                </p>
 
-                <ul>
-
-                  <li>
-                    Welcoming and informing visitors in French,
-                    English and Spanish.
-                  </li>
-
-                  <li>
-                    Managing relationships with hotels and tourism partners.
-                  </li>
-
-                </ul>
-
-              </article>
+              </div>
 
             </div>
 
           </div>
 
-
-          <div class="resume-column">
-
-            <h3>
-              Education
-            </h3>
+        </div>
 
 
-            <div class="education-list">
+        <div class="resume-block">
+
+          <h3>
+            Education
+          </h3>
+
+          <div class="timeline">
 
 
-              <div class="education-item">
+            <div class="timeline-item">
 
-                <div class="education-year">
-                  2020 — 2022
-                </div>
+              <div class="timeline-date">
+                2020—2022
+              </div>
 
-                <strong>
+              <div class="timeline-content">
+
+                <h4>
                   Master’s Degree in International Business Languages
-                </strong>
+                </h4>
 
-                <span>
+                <p>
                   University of Perpignan
-                </span>
+                </p>
 
               </div>
 
+            </div>
 
-              <div class="education-item">
 
-                <div class="education-year">
-                  2017 — 2020
-                </div>
+            <div class="timeline-item">
 
-                <strong>
-                  Double Degree in English &amp; Spanish
-                </strong>
+              <div class="timeline-date">
+                2017—2020
+              </div>
 
-                <span>
+              <div class="timeline-content">
+
+                <h4>
+                  Double Degree in English & Spanish
+                </h4>
+
+                <p>
                   Erasmus year in Valladolid, Spain · Graduated with honors
-                </span>
+                </p>
 
               </div>
 
             </div>
 
+          </div>
 
-            <div class="languages">
-
-              <h3>
-                Languages
-              </h3>
+        </div>
 
 
-              <div class="language">
-                <strong>French</strong>
-                <span>Native</span>
-              </div>
+        <div class="resume-block">
 
-              <div class="language">
-                <strong>English</strong>
-                <span>C1</span>
-              </div>
+          <h3>
+            Languages
+          </h3>
 
-              <div class="language">
-                <strong>Spanish</strong>
-                <span>C1</span>
-              </div>
+          <div class="resume-list">
 
-              <div class="language">
-                <strong>German</strong>
-                <span>A2</span>
-              </div>
-
+            <div>
+              <strong>French</strong> — Native
             </div>
 
+            <div>
+              <strong>English</strong> — C1
+            </div>
 
-            <div class="languages">
+            <div>
+              <strong>Spanish</strong> — C1
+            </div>
 
-              <h3>
-                Tools
-              </h3>
+            <div>
+              <strong>German</strong> — A2
+            </div>
+
+          </div>
+
+        </div>
 
 
-              <div class="tool-list">
+        <div class="resume-block">
 
-                <span class="tool">
-                  Microsoft Office
-                </span>
+          <h3>
+            Tools
+          </h3>
 
-                <span class="tool">
-                  Google Workspace
-                </span>
+          <div class="resume-list">
 
-                <span class="tool">
-                  ChatGPT
-                </span>
+            <div>
+              Microsoft Office
+            </div>
 
-                <span class="tool">
-                  Claude
-                </span>
+            <div>
+              Google Workspace
+            </div>
 
-                <span class="tool">
-                  Trello
-                </span>
+            <div>
+              ChatGPT
+            </div>
 
-                <span class="tool">
-                  ClickUp
-                </span>
+            <div>
+              Claude
+            </div>
 
-                <span class="tool">
-                  InDesign
-                </span>
+            <div>
+              Trello
+            </div>
 
-              </div>
+            <div>
+              ClickUp
+            </div>
 
+            <div>
+              InDesign
             </div>
 
           </div>
@@ -1786,41 +1316,42 @@
       </section>
 
 
-      <!-- CONTACT -->
+      <!-- =========================
+           CONTACT
+      ========================= -->
 
-      <section id="contact" class="section">
+      <section id="contact">
 
-        <div class="contact-box">
+        <div class="contact-card">
 
           <div class="section-label">
-            05 — Contact
+            Contact
           </div>
 
-          <h2 class="section-title">
-            Let’s work together.
+          <h2>
+            Let's work together.
           </h2>
 
           <p>
-            Looking for a multilingual content, translation, localization
-            or copywriting specialist? I’d be happy to hear from you.
+            Looking for multilingual content, French localization
+            or editorial support? Get in touch and let's discuss
+            your project.
           </p>
 
-
-          <div class="contact-actions">
+          <div class="contact-links">
 
             <a
+              class="contact-link"
               href="mailto:gaelleduthe@yahoo.fr"
-              class="contact-button"
             >
               Email me
             </a>
 
-
             <a
-              href="https://www.linkedin.com/in/gaelle-duthe-1846861b8/"
+              class="contact-link"
+              href="https://www.linkedin.com/in/gaelle-duthe-1846861b/"
               target="_blank"
-              rel="noopener noreferrer"
-              class="contact-button"
+              rel="noopener"
             >
               LinkedIn
             </a>
@@ -1832,48 +1363,58 @@
       </section>
 
 
+      <!-- =========================
+           FOOTER
+      ========================= -->
+
+      <footer>
+        © 2026 Gaëlle Duthe · Multilingual Copywriter & Localization Specialist
+      </footer>
+
     </main>
 
   </div>
 
 
   <!-- =========================
-       PORTFOLIO FILTER
+       JAVASCRIPT
   ========================= -->
 
   <script>
 
-    const buttons = document.querySelectorAll(".filter-btn");
-    const cards = document.querySelectorAll(".portfolio-card");
+    /* Portfolio filters */
 
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projects = document.querySelectorAll(".project");
 
-    buttons.forEach(button => {
+    filterButtons.forEach(button => {
 
       button.addEventListener("click", () => {
 
-        buttons.forEach(btn => {
+        const filter = button.dataset.filter;
+
+        filterButtons.forEach(btn => {
           btn.classList.remove("active");
         });
 
         button.classList.add("active");
 
+        projects.forEach(project => {
 
-        const filter = button.dataset.filter;
+          const categories = project.dataset.category || "";
 
+          if (
+            filter === "all" ||
+            categories.includes(filter)
+          ) {
 
-        cards.forEach(card => {
+            project.classList.remove("hidden");
 
-          if (filter === "all") {
-            card.style.display = "";
-            return;
+          } else {
+
+            project.classList.add("hidden");
+
           }
-
-
-          const categories = card.dataset.category || "";
-
-
-          card.style.display =
-            categories.includes(filter) ? "" : "none";
 
         });
 
@@ -1882,15 +1423,10 @@
     });
 
 
-    /* Highlight current section in the sidebar */
+    /* Highlight current navigation section */
 
-    const sections = document.querySelectorAll(
-      "#about, #expertise, #portfolio, #resume, #contact"
-    );
-
-
-    const navLinks = document.querySelectorAll(".sidebar-nav a");
-
+    const sections = document.querySelectorAll("main section");
+    const navLinks = document.querySelectorAll(".nav a");
 
     const observer = new IntersectionObserver(
       entries => {
@@ -1903,14 +1439,12 @@
               link.classList.remove("active");
             });
 
-
-            const active = document.querySelector(
-              '.sidebar-nav a[href="#' + entry.target.id + '"]'
+            const activeLink = document.querySelector(
+              `.nav a[href="#${entry.target.id}"]`
             );
 
-
-            if (active) {
-              active.classList.add("active");
+            if (activeLink) {
+              activeLink.classList.add("active");
             }
 
           }
@@ -1919,10 +1453,10 @@
 
       },
       {
-        rootMargin: "-25% 0px -60% 0px"
+        threshold: 0.25,
+        rootMargin: "-20% 0px -60% 0px"
       }
     );
-
 
     sections.forEach(section => {
       observer.observe(section);
