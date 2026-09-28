@@ -454,6 +454,57 @@
     }
 
     /* =========================
+       NEWSLETTER PROJECT
+    ========================= */
+
+    .newsletter-media {
+      background: #f8f6f5;
+      padding: 10px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .newsletter-media-main {
+      width: 100%;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .newsletter-media-main a,
+    .newsletter-media-bottom a {
+      display: block;
+    }
+
+    .newsletter-media-main img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform .3s ease;
+    }
+
+    .newsletter-media-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .newsletter-media-bottom a {
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .newsletter-media-bottom img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform .3s ease;
+    }
+
+    .newsletter-media a:hover img {
+      transform: scale(1.015);
+    }
+
+    /* =========================
        RESUME
     ========================= */
 
@@ -731,6 +782,16 @@
 
       .campaign-media {
         grid-template-columns: 1fr;
+      }
+
+      .newsletter-media {
+        padding: 6px;
+        gap: 6px;
+      }
+
+      .newsletter-media-bottom {
+        grid-template-columns: 1fr;
+        gap: 6px;
       }
 
       .section-title {
@@ -1287,49 +1348,68 @@
           </article>
 
 
-          <!-- COMING SOON -->
+          <!-- CHRISTMAS PROMOTIONAL NEWSLETTER -->
 
           <article
-            class="portfolio-card"
-            data-category="copywriting"
+            class="portfolio-card wide"
+            data-category="localization copywriting"
           >
 
-            <div
-              class="portfolio-media"
-              style="
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                padding:35px;
-                background:var(--accent-soft);
-              "
-            >
+            <div class="newsletter-media">
 
-              <div style="text-align:center;">
+              <!-- Main newsletter screenshot -->
 
-                <div
-                  style="
-                    color:var(--accent);
-                    font-size:11px;
-                    font-weight:800;
-                    letter-spacing:1px;
-                    text-transform:uppercase;
-                    margin-bottom:10px;
-                  "
+              <div class="newsletter-media-main">
+
+                <a
+                  href="newsletter-hero.png"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  More projects
-                </div>
+
+                  <img
+                    src="newsletter-hero.png"
+                    alt="Christmas promotional newsletter — hero section"
+                    loading="lazy"
+                  >
+
+                </a>
+
+              </div>
 
 
-                <div
-                  style="
-                    font-size:28px;
-                    font-weight:700;
-                    letter-spacing:-1px;
-                  "
+              <!-- Additional newsletter screenshots -->
+
+              <div class="newsletter-media-bottom">
+
+                <a
+                  href="newsletter-products.png"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Coming soon
-                </div>
+
+                  <img
+                    src="newsletter-products.png"
+                    alt="Christmas promotional newsletter — product selection"
+                    loading="lazy"
+                  >
+
+                </a>
+
+
+                <a
+                  href="newsletter-offer.png"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+
+                  <img
+                    src="newsletter-offer.png"
+                    alt="Christmas promotional newsletter — promotional offer"
+                    loading="lazy"
+                  >
+
+                </a>
 
               </div>
 
@@ -1339,32 +1419,55 @@
             <div class="portfolio-body">
 
               <div class="portfolio-category">
-                Content · SEO · Marketing
+                Marketing Translation &amp; Localization
               </div>
 
+
               <h3>
-                More selected work
+                Christmas Promotional Newsletter
               </h3>
 
+
               <p>
-                Additional examples of content writing, SEO optimization,
-                marketing communication and multilingual projects can be
-                added here as the portfolio grows.
+                Translation and localization of a Christmas promotional
+                newsletter for the French market. I adapted the marketing
+                copy, promotional messaging, product descriptions and calls
+                to action to ensure a natural and engaging French version
+                while preserving the original campaign objectives and brand tone.
               </p>
+
+
+              <div class="portfolio-meta">
+
+                <strong>
+                  My role
+                </strong>
+
+                EN → FR · Marketing translation · Localization · Copy adaptation · Transcreation
+
+              </div>
 
 
               <div class="tags">
 
                 <span class="tag">
-                  Content Writing
+                  Translation
                 </span>
 
                 <span class="tag">
-                  SEO
+                  Localization
                 </span>
 
                 <span class="tag">
-                  Marketing
+                  Marketing Copy
+                </span>
+
+                <span class="tag">
+                  Transcreation
+                </span>
+
+                <span class="tag">
+                  EN → FR
                 </span>
 
               </div>
@@ -1372,6 +1475,7 @@
             </div>
 
           </article>
+
 
         </div>
 
