@@ -1025,23 +1025,32 @@
           >
 
             <div class="newsletter-gallery">
+<div class="newsletter-gallery">
 
-              <img
-                src="newsletter-1.png"
-                alt="Newsletter localization project - screenshot 1"
-              >
+  <img
+    src="newsletter-1.png"
+    alt="Newsletter localization project - screenshot 1"
+    onclick="openImage(this.src)"
+  >
 
-              <img
-                src="newsletter-2.png"
-                alt="Newsletter localization project - screenshot 2"
-              >
+  <img
+    src="newsletter-2.png"
+    alt="Newsletter localization project - screenshot 2"
+    onclick="openImage(this.src)"
+  >
 
-              <img
-                src="newsletter-3.png"
-                alt="Newsletter localization project - screenshot 3"
-              >
+  <img
+    src="newsletter-3.png"
+    alt="Newsletter localization project - screenshot 3"
+    onclick="openImage(this.src)"
+  >
 
-            </div>
+</div>
+
+<div id="imageModal" class="image-modal" onclick="closeImage()">
+  <button class="image-modal-close" onclick="closeImage()">×</button>
+  <img id="modalImage" src="" alt="">
+</div>
 
             <div class="newsletter-content">
 
