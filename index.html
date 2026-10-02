@@ -1,804 +1,591 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gaëlle Duthe | Multilingual Copywriter & Localization Specialist</title>
-
-  <meta
-    name="description"
-    content="Gaëlle Duthe — multilingual copywriter and localization specialist working across content, translation, SEO and digital marketing."
-  >
+  <meta name="description" content="Gaëlle Duthe — multilingual copywriter and localization specialist working across content, translation, SEO and digital marketing.">
 
   <style>
     :root {
-      --bg: #f8f7f5;
-      --card: #ffffff;
-      --text: #1c1c1f;
-      --muted: #707078;
-      --line: #e8e5e2;
-      --accent: #b86f51;
-      --accent-soft: #f4e9e3;
-      --dark: #202024;
-
-      --max: 1180px;
-      --sidebar: 320px;
-      --radius: 18px;
-      --shadow: 0 14px 45px rgba(20, 20, 25, .07);
+      --bg:#f8f7f5;
+      --card:#fff;
+      --text:#1c1c1f;
+      --muted:#707078;
+      --line:#e8e5e2;
+      --accent:#b86f51;
+      --accent-soft:#f4e9e3;
+      --dark:#202024;
+      --max:1180px;
+      --sidebar:320px;
+      --radius:18px;
+      --shadow:0 14px 45px rgba(20,20,25,.07);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing:border-box; margin:0; padding:0; }
 
     html {
-      scroll-behavior: smooth;
-      width: 100%;
-      min-height: 100%;
-      overflow-x: hidden;
+      scroll-behavior:smooth;
+      width:100%;
+      min-height:100%;
+      overflow-x:hidden;
     }
 
     body {
-      font-family:
-        Inter,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
-
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-
-      width: 100%;
-      min-height: 100%;
-      overflow-x: hidden;
-      overflow-y: auto;
+      font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      width:100%;
+      min-height:100%;
+      overflow-x:hidden;
+      overflow-y:auto;
     }
 
-    body.modal-open {
-      overflow: hidden;
-    }
+    body.modal-open { overflow:hidden; }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color:inherit; text-decoration:none; }
 
     img {
-      max-width: 100%;
-      display: block;
+      max-width:100%;
+      display:block;
     }
-
-    /* =========================
-       LAYOUT
-    ========================= */
 
     .site {
-      width: 100%;
-      max-width: var(--max);
-      min-height: 100vh;
-      margin: 0 auto;
-
-      display: grid;
-
-      grid-template-columns:
-        minmax(240px, var(--sidebar))
-        minmax(0, 1fr);
-
-      gap: 50px;
-      padding: 50px 28px;
+      width:100%;
+      max-width:var(--max);
+      min-height:100vh;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(240px,var(--sidebar)) minmax(0,1fr);
+      gap:50px;
+      padding:50px 28px;
     }
-
-    /* =========================
-       SIDEBAR
-    ========================= */
 
     .sidebar {
-      position: sticky;
-      top: 35px;
-      height: fit-content;
+      position:sticky;
+      top:35px;
+      height:fit-content;
     }
 
-    .profile {
-      text-align: left;
-    }
+    .profile { text-align:left; }
 
     .profile-photo {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 24px;
-      border: 5px solid #fff;
-      box-shadow: var(--shadow);
+      width:150px;
+      height:150px;
+      object-fit:cover;
+      border-radius:50%;
+      margin-bottom:24px;
+      border:5px solid #fff;
+      box-shadow:var(--shadow);
     }
 
     .profile h1 {
-      font-size: 2rem;
-      line-height: 1.15;
-      letter-spacing: -0.04em;
-      margin-bottom: 10px;
+      font-size:2rem;
+      line-height:1.15;
+      letter-spacing:-.04em;
+      margin-bottom:10px;
     }
 
     .profile-role {
-      color: var(--muted);
-      font-size: 0.98rem;
-      line-height: 1.5;
-      margin-bottom: 24px;
+      color:var(--muted);
+      font-size:.98rem;
+      line-height:1.5;
+      margin-bottom:24px;
     }
 
     .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      font-size: 0.88rem;
-      color: var(--muted);
-      margin-bottom: 30px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      font-size:.88rem;
+      color:var(--muted);
+      margin-bottom:30px;
     }
 
-    .contact-info a {
-      transition: color .2s ease;
-    }
-
-    .contact-info a:hover {
-      color: var(--accent);
-    }
-
-    /* Navigation */
+    .contact-info a:hover { color:var(--accent); }
 
     .nav {
-      border-top: 1px solid var(--line);
-      padding-top: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+      border-top:1px solid var(--line);
+      padding-top:20px;
+      display:flex;
+      flex-direction:column;
+      gap:4px;
     }
 
     .nav a {
-      position: relative;
-      padding: 9px 12px;
-      margin-left: -12px;
-      border-radius: 10px;
-      color: var(--muted);
-      font-size: 0.9rem;
-
-      transition:
-        color .2s ease,
-        background .2s ease;
+      padding:9px 12px;
+      margin-left:-12px;
+      border-radius:10px;
+      color:var(--muted);
+      font-size:.9rem;
+      transition:color .2s ease,background .2s ease;
     }
 
     .nav a:hover,
     .nav a.active {
-      color: var(--text);
-      background: var(--accent-soft);
+      color:var(--text);
+      background:var(--accent-soft);
     }
 
     .nav a.active {
-      color: var(--accent);
-      font-weight: 600;
+      color:var(--accent);
+      font-weight:600;
     }
 
-    /* =========================
-       MAIN
-    ========================= */
-
-    main {
-      width: 100%;
-      min-width: 0;
-    }
+    main { width:100%; min-width:0; }
 
     section {
-      scroll-margin-top: 35px;
-      margin-bottom: 110px;
-      min-width: 0;
+      scroll-margin-top:35px;
+      margin-bottom:110px;
+      min-width:0;
     }
 
     .section-label {
-      color: var(--accent);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: .14em;
-      font-weight: 700;
-      margin-bottom: 12px;
+      color:var(--accent);
+      font-size:.75rem;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-weight:700;
+      margin-bottom:12px;
     }
 
     h2 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      line-height: 1.05;
-      letter-spacing: -0.045em;
-      margin-bottom: 25px;
+      font-size:clamp(2rem,4vw,3.2rem);
+      line-height:1.05;
+      letter-spacing:-.045em;
+      margin-bottom:25px;
     }
 
     .intro {
-      font-size: 1.15rem;
-      color: #424248;
-      max-width: 760px;
-      line-height: 1.75;
+      font-size:1.15rem;
+      color:#424248;
+      max-width:760px;
+      line-height:1.75;
     }
-
-    /* =========================
-       ABOUT
-    ========================= */
 
     .about-highlight {
-      margin-top: 35px;
-      padding: 28px 30px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      font-size: 1.08rem;
-      line-height: 1.7;
+      margin-top:35px;
+      padding:28px 30px;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      font-size:1.08rem;
+      line-height:1.7;
     }
 
-    /* =========================
-       EXPERTISE
-    ========================= */
-
     .expertise-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      width: 100%;
-      min-width: 0;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+      width:100%;
+      min-width:0;
     }
 
     .expertise-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 26px;
-      min-width: 0;
-
-      transition:
-        transform .25s ease,
-        box-shadow .25s ease;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:26px;
+      min-width:0;
+      transition:transform .25s ease,box-shadow .25s ease;
     }
 
     .expertise-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow);
+      transform:translateY(-3px);
+      box-shadow:var(--shadow);
     }
 
     .expertise-number {
-      color: var(--accent);
-      font-size: .78rem;
-      font-weight: 700;
-      margin-bottom: 15px;
+      color:var(--accent);
+      font-size:.78rem;
+      font-weight:700;
+      margin-bottom:15px;
     }
 
-    .expertise-card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 7px;
-    }
-
-    .expertise-card p {
-      color: var(--muted);
-      font-size: .9rem;
-    }
-
-    /* =========================
-       PORTFOLIO FILTERS
-    ========================= */
+    .expertise-card h3 { font-size:1.1rem; margin-bottom:7px; }
+    .expertise-card p { color:var(--muted); font-size:.9rem; }
 
     .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 30px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:30px;
     }
 
     .filter-btn {
-      border: 1px solid var(--line);
-      background: var(--card);
-      color: var(--muted);
-      border-radius: 999px;
-      padding: 8px 15px;
-      font-family: inherit;
-      font-size: .82rem;
-      cursor: pointer;
-
-      transition: all .2s ease;
+      border:1px solid var(--line);
+      background:var(--card);
+      color:var(--muted);
+      border-radius:999px;
+      padding:8px 15px;
+      font-family:inherit;
+      font-size:.82rem;
+      cursor:pointer;
+      transition:all .2s ease;
     }
 
     .filter-btn:hover,
     .filter-btn.active {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: white;
+      background:var(--accent);
+      border-color:var(--accent);
+      color:#fff;
     }
 
-    /* =========================
-       PORTFOLIO GRID
-    ========================= */
-
     .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-      width: 100%;
-      min-width: 0;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:22px;
+      width:100%;
+      min-width:0;
     }
 
     .project {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: 0 8px 30px rgba(20, 20, 25, .04);
-
-      min-width: 0;
-
-      transition:
-        transform .25s ease,
-        box-shadow .25s ease;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:0 8px 30px rgba(20,20,25,.04);
+      min-width:0;
+      transition:transform .25s ease,box-shadow .25s ease;
     }
 
     .project:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
+      transform:translateY(-4px);
+      box-shadow:var(--shadow);
     }
 
-    .project.hidden {
-      display: none;
-    }
+    .project.hidden { display:none; }
 
     .project-image {
-      aspect-ratio: 16 / 10;
-      overflow: hidden;
-      background: #eee;
+      aspect-ratio:16/10;
+      overflow:hidden;
+      background:#eee;
     }
 
     .project-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .4s ease;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      cursor:zoom-in;
+      transition:transform .4s ease;
     }
 
-    .project:hover .project-image img {
-      transform: scale(1.025);
-    }
+    .project:hover .project-image img { transform:scale(1.025); }
 
-    .project-content {
-      padding: 24px;
-    }
+    .project-content { padding:24px; }
 
     .project-category {
-      color: var(--accent);
-      font-size: .7rem;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      font-weight: 700;
-      margin-bottom: 9px;
+      color:var(--accent);
+      font-size:.7rem;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-weight:700;
+      margin-bottom:9px;
     }
 
     .project h3 {
-      font-size: 1.25rem;
-      line-height: 1.25;
-      margin-bottom: 10px;
+      font-size:1.25rem;
+      line-height:1.25;
+      margin-bottom:10px;
     }
 
     .project-description {
-      color: var(--muted);
-      font-size: .9rem;
-      line-height: 1.65;
-      margin-bottom: 17px;
+      color:var(--muted);
+      font-size:.9rem;
+      line-height:1.65;
+      margin-bottom:17px;
     }
 
     .project-meta {
-      color: #55555c;
-      font-size: .78rem;
-      line-height: 1.6;
+      color:#55555c;
+      font-size:.78rem;
+      line-height:1.6;
     }
 
-    /* =========================
-       NEWSLETTER PROJECT
-    ========================= */
-
-    .project-newsletter {
-      grid-column: 1 / -1;
-    }
+    .project-newsletter { grid-column:1/-1; }
 
     .newsletter-gallery {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 8px;
-      height: 430px;
-      background: #eee;
-      padding: 8px;
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      grid-template-rows:1fr 1fr;
+      gap:8px;
+      height:430px;
+      background:#eee;
+      padding:8px;
     }
 
     .newsletter-gallery img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top;
-      border-radius: 10px;
-      background: white;
-      cursor: zoom-in;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:top;
+      border-radius:10px;
+      background:#fff;
+      cursor:zoom-in;
     }
 
-    .newsletter-gallery img:first-child {
-      grid-row: 1 / 3;
-    }
+    .newsletter-gallery img:first-child { grid-row:1/3; }
 
     .newsletter-gallery img:nth-child(2),
-    .newsletter-gallery img:nth-child(3) {
-      min-height: 0;
-    }
+    .newsletter-gallery img:nth-child(3) { min-height:0; }
 
-    /* =========================
-       IMAGE LIGHTBOX
-    ========================= */
-
+    /*
+      LIGHTBOX
+      The modal is placed directly under <body>, so no portfolio card
+      can clip it. The image is fitted completely inside the viewport:
+      the whole newsletter screenshot can therefore be seen at once.
+    */
     .image-modal {
-      display: none;
-
-      position: fixed;
-      z-index: 9999;
-      inset: 0;
-
-      background: rgba(0, 0, 0, .88);
-
-      align-items: center;
-      justify-content: center;
-
-      padding: 30px;
-      overflow: auto;
+      display:none;
+      position:fixed;
+      z-index:99999;
+      inset:0;
+      width:100vw;
+      height:100vh;
+      padding:24px;
+      background:rgba(0,0,0,.90);
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
     }
 
-    .image-modal.open {
-      display: flex;
-    }
+    .image-modal.open { display:flex; }
 
     .image-modal img {
-      max-width: 95vw;
-      max-height: 92vh;
-
-      width: auto;
-      height: auto;
-
-      object-fit: contain;
-      border-radius: 8px;
-      cursor: default;
+      display:block;
+      width:auto;
+      height:auto;
+      max-width:calc(100vw - 48px);
+      max-height:calc(100vh - 48px);
+      object-fit:contain;
+      border-radius:8px;
+      cursor:default;
+      flex:0 0 auto;
     }
 
     .image-modal-close {
-      position: absolute;
-      top: 18px;
-      right: 28px;
-
-      border: none;
-      background: transparent;
-
-      color: white;
-      font-size: 44px;
-      line-height: 1;
-
-      cursor: pointer;
-      z-index: 10000;
+      position:fixed;
+      top:14px;
+      right:22px;
+      z-index:100000;
+      border:0;
+      background:transparent;
+      color:#fff;
+      font-size:44px;
+      line-height:1;
+      cursor:pointer;
+      padding:4px 8px;
     }
 
-    .image-modal-close:hover {
-      opacity: .75;
-    }
+    .image-modal-close:hover { opacity:.75; }
 
-    .newsletter-content {
-      padding: 28px;
-    }
+    .newsletter-content { padding:28px; }
 
     .newsletter-content h3 {
-      font-size: 1.45rem;
-      margin-bottom: 10px;
+      font-size:1.45rem;
+      margin-bottom:10px;
     }
 
-    .newsletter-content .project-description {
-      max-width: 800px;
-    }
+    .newsletter-content .project-description { max-width:800px; }
 
-    /* =========================
-       VIDEO
-    ========================= */
-
-    .video-wrapper {
-      position: relative;
-      aspect-ratio: 16 / 9;
-      background: #111;
-      overflow: hidden;
-    }
-
-    .video-wrapper iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    /* =========================
-       RESUME
-    ========================= */
-
-    .resume-block {
-      margin-bottom: 42px;
-    }
-
-    .resume-block h3 {
-      font-size: 1.15rem;
-      margin-bottom: 20px;
-    }
+    .resume-block { margin-bottom:42px; }
+    .resume-block h3 { font-size:1.15rem; margin-bottom:20px; }
 
     .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 26px;
+      display:flex;
+      flex-direction:column;
+      gap:26px;
     }
 
     .timeline-item {
-      display: grid;
-      grid-template-columns: 120px minmax(0, 1fr);
-      gap: 20px;
-      min-width: 0;
+      display:grid;
+      grid-template-columns:120px minmax(0,1fr);
+      gap:20px;
+      min-width:0;
     }
+
+    .timeline-content { min-width:0; }
 
     .timeline-date {
-      color: var(--accent);
-      font-size: .78rem;
-      font-weight: 700;
-      line-height: 1.5;
+      color:var(--accent);
+      font-size:.78rem;
+      font-weight:700;
+      line-height:1.5;
     }
 
-    .timeline-content {
-      min-width: 0;
-    }
-
-    .timeline-content h4 {
-      font-size: 1rem;
-      margin-bottom: 3px;
-    }
-
-    .timeline-content p {
-      color: var(--muted);
-      font-size: .88rem;
-    }
+    .timeline-content h4 { font-size:1rem; margin-bottom:3px; }
+    .timeline-content p { color:var(--muted); font-size:.88rem; }
 
     .resume-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px 30px;
-      min-width: 0;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px 30px;
+      min-width:0;
     }
 
-    .resume-list div {
-      font-size: .9rem;
-      color: var(--muted);
-    }
-
-    .resume-list strong {
-      color: var(--text);
-    }
-
-    /* =========================
-       CONTACT
-    ========================= */
+    .resume-list div { font-size:.9rem; color:var(--muted); }
+    .resume-list strong { color:var(--text); }
 
     .contact-card {
-      background: var(--dark);
-      color: white;
-      padding: 40px;
-      border-radius: var(--radius);
+      background:var(--dark);
+      color:#fff;
+      padding:40px;
+      border-radius:var(--radius);
     }
 
-    .contact-card .section-label {
-      color: #d9a38c;
-    }
-
-    .contact-card h2 {
-      margin-bottom: 15px;
-    }
-
+    .contact-card .section-label { color:#d9a38c; }
+    .contact-card h2 { margin-bottom:15px; }
     .contact-card p {
-      color: #c8c8cc;
-      max-width: 620px;
-      margin-bottom: 25px;
+      color:#c8c8cc;
+      max-width:620px;
+      margin-bottom:25px;
     }
 
     .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
     }
 
     .contact-link {
-      display: inline-block;
-      background: white;
-      color: var(--dark);
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-size: .85rem;
-      font-weight: 600;
-
-      transition: transform .2s ease;
+      display:inline-block;
+      background:#fff;
+      color:var(--dark);
+      padding:10px 16px;
+      border-radius:999px;
+      font-size:.85rem;
+      font-weight:600;
+      transition:transform .2s ease;
     }
 
-    .contact-link:hover {
-      transform: translateY(-2px);
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
+    .contact-link:hover { transform:translateY(-2px); }
 
     footer {
-      color: var(--muted);
-      font-size: .78rem;
-      padding-top: 25px;
-      border-top: 1px solid var(--line);
+      color:var(--muted);
+      font-size:.78rem;
+      padding-top:25px;
+      border-top:1px solid var(--line);
     }
 
-    /* =========================
-       RESPONSIVE / ZOOM FIX
-    ========================= */
-
-    @media (max-width: 1100px) {
-
+    @media (max-width:1100px) {
       .site {
-        grid-template-columns:
-          250px
-          minmax(0, 1fr);
-
-        gap: 35px;
+        grid-template-columns:250px minmax(0,1fr);
+        gap:35px;
       }
     }
 
-    @media (max-width: 980px) {
-
+    @media (max-width:980px) {
       .site {
-        grid-template-columns: 1fr;
-        gap: 45px;
+        grid-template-columns:1fr;
+        gap:45px;
       }
 
       .sidebar {
-        position: relative;
-        top: auto;
+        position:relative;
+        top:auto;
       }
 
       .profile {
-        display: grid;
-        grid-template-columns: 120px 1fr;
-        column-gap: 25px;
-        align-items: center;
+        display:grid;
+        grid-template-columns:120px 1fr;
+        column-gap:25px;
+        align-items:center;
       }
 
       .profile-photo {
-        width: 120px;
-        height: 120px;
-        grid-row: span 3;
-        margin-bottom: 0;
+        width:120px;
+        height:120px;
+        grid-row:span 3;
+        margin-bottom:0;
       }
 
-      .contact-info {
-        margin-bottom: 20px;
-      }
+      .contact-info { margin-bottom:20px; }
 
       .nav {
-        grid-column: 1 / -1;
-        flex-direction: row;
-        flex-wrap: wrap;
+        grid-column:1/-1;
+        flex-direction:row;
+        flex-wrap:wrap;
       }
 
-      .nav a {
-        margin-left: 0;
-      }
+      .nav a { margin-left:0; }
     }
 
-    @media (max-width: 800px) {
-
+    @media (max-width:800px) {
       .site {
-        grid-template-columns: 1fr;
-        padding: 35px 22px;
+        grid-template-columns:1fr;
+        padding:35px 22px;
       }
 
       .portfolio-grid,
       .expertise-grid,
       .resume-list {
-        grid-template-columns: 1fr;
+        grid-template-columns:1fr;
       }
 
-      .project-newsletter {
-        grid-column: auto;
-      }
+      .project-newsletter { grid-column:auto; }
 
       .timeline-item {
-        grid-template-columns: 1fr;
-        gap: 5px;
+        grid-template-columns:1fr;
+        gap:5px;
       }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width:700px) {
+      .site { padding:30px 18px; }
+      section { margin-bottom:75px; }
 
-      .site {
-        padding: 30px 18px;
-      }
-
-      section {
-        margin-bottom: 75px;
-      }
-
-      .profile {
-        display: block;
-      }
-
-      .profile-photo {
-        margin-bottom: 18px;
-      }
-
-      .profile h1 {
-        font-size: 1.7rem;
-      }
+      .profile { display:block; }
+      .profile-photo { margin-bottom:18px; }
+      .profile h1 { font-size:1.7rem; }
 
       .newsletter-gallery {
-        height: auto;
-
-        display: grid;
-
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 250px 180px;
+        height:auto;
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:250px 180px;
       }
 
       .newsletter-gallery img:first-child {
-        grid-column: 1 / -1;
-        grid-row: auto;
+        grid-column:1/-1;
+        grid-row:auto;
       }
 
       .newsletter-gallery img:nth-child(2),
       .newsletter-gallery img:nth-child(3) {
-        grid-row: auto;
+        grid-row:auto;
       }
 
-      .contact-card {
-        padding: 28px;
+      .contact-card { padding:28px; }
+
+      .image-modal { padding:16px; }
+
+      .image-modal img {
+        max-width:calc(100vw - 32px);
+        max-height:calc(100vh - 32px);
+      }
+
+      .image-modal-close {
+        top:8px;
+        right:12px;
       }
     }
 
-    /*
-      Extra protection when browser zoom makes
-      the available viewport very narrow.
-    */
-
-    @media (max-width: 600px) {
-
+    @media (max-width:600px) {
       .site {
-        padding-left: 16px;
-        padding-right: 16px;
+        padding-left:16px;
+        padding-right:16px;
       }
 
-      h2 {
-        font-size: 2rem;
-      }
+      h2 { font-size:2rem; }
 
       .newsletter-gallery {
-        grid-template-columns: 1fr;
-        grid-template-rows: 300px 220px 220px;
+        grid-template-columns:1fr;
+        grid-template-rows:300px 220px 220px;
       }
 
-      .newsletter-gallery img:first-child {
-        grid-column: auto;
-      }
+      .newsletter-gallery img:first-child { grid-column:auto; }
     }
-
   </style>
 </head>
 
@@ -806,19 +593,9 @@
 
   <div class="site">
 
-    <!-- =========================
-         SIDEBAR
-    ========================= -->
-
     <aside class="sidebar">
-
       <div class="profile">
-
-        <img
-          class="profile-photo"
-          src="Duthe Gaelle Photo.png"
-          alt="Gaëlle Duthe"
-        >
+        <img class="profile-photo" src="Duthe Gaelle Photo.png" alt="Gaëlle Duthe">
 
         <h1>Gaëlle Duthe</h1>
 
@@ -828,55 +605,27 @@
         </p>
 
         <div class="contact-info">
+          <a href="mailto:gaelleduthe@yahoo.fr">gaelleduthe@yahoo.fr</a>
 
-          <a href="mailto:gaelleduthe@yahoo.fr">
-            gaelleduthe@yahoo.fr
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/gaelle-duthe-1846861b/"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://www.linkedin.com/in/gaelle-duthe-1846861b/" target="_blank" rel="noopener">
             LinkedIn
           </a>
-
         </div>
-
       </div>
 
       <nav class="nav" aria-label="Main navigation">
-
         <a href="#about">About</a>
-
         <a href="#expertise">Expertise</a>
-
         <a href="#portfolio">Portfolio</a>
-
         <a href="#resume">Resume</a>
-
         <a href="#contact">Contact</a>
-
       </nav>
-
     </aside>
-
-
-    <!-- =========================
-         MAIN
-    ========================= -->
 
     <main>
 
-      <!-- =========================
-           ABOUT
-      ========================= -->
-
       <section id="about">
-
-        <div class="section-label">
-          About
-        </div>
+        <div class="section-label">About</div>
 
         <h2>
           Words that work<br>
@@ -893,213 +642,79 @@
           <strong>Clear words. Natural localization.</strong><br>
           Content adapted to the audience — not simply translated word for word.
         </div>
-
       </section>
 
-
-      <!-- =========================
-           EXPERTISE
-      ========================= -->
-
       <section id="expertise">
-
-        <div class="section-label">
-          Expertise
-        </div>
-
-        <h2>
-          What I do
-        </h2>
+        <div class="section-label">Expertise</div>
+        <h2>What I do</h2>
 
         <div class="expertise-grid">
 
           <div class="expertise-card">
-
-            <div class="expertise-number">
-              01
-            </div>
-
-            <h3>
-              Copywriting
-            </h3>
-
-            <p>
-              Engaging and conversion-focused content adapted to
-              brand identity and audience.
-            </p>
-
+            <div class="expertise-number">01</div>
+            <h3>Copywriting</h3>
+            <p>Engaging and conversion-focused content adapted to brand identity and audience.</p>
           </div>
 
-
           <div class="expertise-card">
-
-            <div class="expertise-number">
-              02
-            </div>
-
-            <h3>
-              Translation
-            </h3>
-
-            <p>
-              English and Spanish to French translation with a focus
-              on accuracy, fluency and natural language.
-            </p>
-
+            <div class="expertise-number">02</div>
+            <h3>Translation</h3>
+            <p>English and Spanish to French translation with a focus on accuracy, fluency and natural language.</p>
           </div>
 
-
           <div class="expertise-card">
-
-            <div class="expertise-number">
-              03
-            </div>
-
-            <h3>
-              Localization
-            </h3>
-
-            <p>
-              Adapting content, tone and messaging to French-speaking
-              audiences and cultural expectations.
-            </p>
-
+            <div class="expertise-number">03</div>
+            <h3>Localization</h3>
+            <p>Adapting content, tone and messaging to French-speaking audiences and cultural expectations.</p>
           </div>
 
-
           <div class="expertise-card">
-
-            <div class="expertise-number">
-              04
-            </div>
-
-            <h3>
-              SEO Content
-            </h3>
-
-            <p>
-              Search-focused content combining readability,
-              structure and keyword strategy.
-            </p>
-
+            <div class="expertise-number">04</div>
+            <h3>SEO Content</h3>
+            <p>Search-focused content combining readability, structure and keyword strategy.</p>
           </div>
 
-
           <div class="expertise-card">
-
-            <div class="expertise-number">
-              05
-            </div>
-
-            <h3>
-              GEO Content
-            </h3>
-
-            <p>
-              Content structured to improve visibility and relevance
-              across AI-powered search experiences.
-            </p>
-
+            <div class="expertise-number">05</div>
+            <h3>GEO Content</h3>
+            <p>Content structured to improve visibility and relevance across AI-powered search experiences.</p>
           </div>
 
-
           <div class="expertise-card">
-
-            <div class="expertise-number">
-              06
-            </div>
-
-            <h3>
-              Editing & Proofreading
-            </h3>
-
-            <p>
-              Editorial review, proofreading and quality assurance
-              for polished final content.
-            </p>
-
+            <div class="expertise-number">06</div>
+            <h3>Editing & Proofreading</h3>
+            <p>Editorial review, proofreading and quality assurance for polished final content.</p>
           </div>
 
         </div>
-
       </section>
 
-
-      <!-- =========================
-           PORTFOLIO
-      ========================= -->
-
       <section id="portfolio">
-
-        <div class="section-label">
-          Portfolio
-        </div>
-
-        <h2>
-          Selected work
-        </h2>
+        <div class="section-label">Portfolio</div>
+        <h2>Selected work</h2>
 
         <div class="filters">
-
-          <button
-            class="filter-btn active"
-            data-filter="all"
-          >
-            All
-          </button>
-
-          <button
-            class="filter-btn"
-            data-filter="localization"
-          >
-            Localization
-          </button>
-
-          <button
-            class="filter-btn"
-            data-filter="copywriting"
-          >
-            Copywriting
-          </button>
-
-          <button
-            class="filter-btn"
-            data-filter="ecommerce"
-          >
-            E-commerce
-          </button>
-
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="localization">Localization</button>
+          <button class="filter-btn" data-filter="copywriting">Copywriting</button>
+          <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
         </div>
-
 
         <div class="portfolio-grid">
 
-
-          <!-- PROJECT 1 -->
-
-          <article
-            class="project"
-            data-category="localization copywriting"
-          >
-
+          <article class="project" data-category="localization copywriting">
             <div class="project-image">
-
               <img
                 src="beliani-french-days.png"
                 alt="Beliani French Days campaign"
+                onclick="openImage(this.src, this.alt)"
               >
-
             </div>
 
             <div class="project-content">
+              <div class="project-category">Localization · Copywriting</div>
 
-              <div class="project-category">
-                Localization · Copywriting
-              </div>
-
-              <h3>
-                Beliani French Days Campaign
-              </h3>
+              <h3>Beliani French Days Campaign</h3>
 
               <p class="project-description">
                 French adaptation of a promotional campaign,
@@ -1111,37 +726,22 @@
                 EN → FR · Campaign adaptation · Transcreation ·
                 Voice-over · Quality assurance
               </div>
-
             </div>
-
           </article>
 
-
-          <!-- PROJECT 2 -->
-
-          <article
-            class="project"
-            data-category="localization copywriting ecommerce"
-          >
-
+          <article class="project" data-category="localization copywriting ecommerce">
             <div class="project-image">
-
               <img
                 src="beliani-product-content.png"
                 alt="Beliani product content localization"
+                onclick="openImage(this.src, this.alt)"
               >
-
             </div>
 
             <div class="project-content">
+              <div class="project-category">Localization · E-commerce</div>
 
-              <div class="project-category">
-                Localization · E-commerce
-              </div>
-
-              <h3>
-                Beliani Product Content Localization
-              </h3>
+              <h3>Beliani Product Content Localization</h3>
 
               <p class="project-description">
                 Localization of product content for the French
@@ -1153,78 +753,37 @@
                 EN → FR · Product localization · E-commerce ·
                 Content adaptation
               </div>
-
             </div>
-
           </article>
 
-
-          <!-- PROJECT 3 — NEWSLETTER -->
-
-          <article
-            class="project project-newsletter"
-            data-category="localization copywriting"
-          >
+          <article class="project project-newsletter" data-category="localization copywriting">
 
             <div class="newsletter-gallery">
 
               <img
                 src="newsletter-1.png"
                 alt="Newsletter localization project - screenshot 1"
-                onclick="openImage(this.src)"
+                onclick="openImage(this.src, this.alt)"
               >
 
               <img
                 src="newsletter-2.png"
                 alt="Newsletter localization project - screenshot 2"
-                onclick="openImage(this.src)"
+                onclick="openImage(this.src, this.alt)"
               >
 
               <img
                 src="newsletter-3.png"
                 alt="Newsletter localization project - screenshot 3"
-                onclick="openImage(this.src)"
+                onclick="openImage(this.src, this.alt)"
               >
 
             </div>
-
-
-            <!-- IMAGE LIGHTBOX -->
-
-            <div
-              id="imageModal"
-              class="image-modal"
-              onclick="closeImage()"
-            >
-
-              <button
-                class="image-modal-close"
-                type="button"
-                aria-label="Close image"
-                onclick="event.stopPropagation(); closeImage()"
-              >
-                ×
-              </button>
-
-              <img
-                id="modalImage"
-                src=""
-                alt=""
-                onclick="event.stopPropagation()"
-              >
-
-            </div>
-
 
             <div class="newsletter-content">
+              <div class="project-category">Localization · Copywriting</div>
 
-              <div class="project-category">
-                Localization · Copywriting
-              </div>
-
-              <h3>
-                Newsletter Localization & Content Adaptation
-              </h3>
+              <h3>Newsletter Localization & Content Adaptation</h3>
 
               <p class="project-description">
                 Translation and adaptation of a newsletter for a
@@ -1239,269 +798,111 @@
                 EN → FR · Translation · Localization · Copywriting ·
                 Content adaptation · Editorial quality
               </div>
-
             </div>
-
           </article>
 
-
         </div>
-
       </section>
-
-
-      <!-- =========================
-           RESUME
-      ========================= -->
 
       <section id="resume">
-
-        <div class="section-label">
-          Resume
-        </div>
-
-        <h2>
-          Experience & education
-        </h2>
-
+        <div class="section-label">Resume</div>
+        <h2>Experience & education</h2>
 
         <div class="resume-block">
-
-          <h3>
-            Professional Experience
-          </h3>
+          <h3>Professional Experience</h3>
 
           <div class="timeline">
 
             <div class="timeline-item">
-
-              <div class="timeline-date">
-                2024—2026
-              </div>
-
+              <div class="timeline-date">2024—2026</div>
               <div class="timeline-content">
-
-                <h4>
-                  Copywriter & Translator
-                </h4>
-
-                <p>
-                  French · English · Spanish
-                </p>
-
+                <h4>Copywriter & Translator</h4>
+                <p>French · English · Spanish</p>
               </div>
-
             </div>
 
-
             <div class="timeline-item">
-
-              <div class="timeline-date">
-                2022—2024
-              </div>
-
+              <div class="timeline-date">2022—2024</div>
               <div class="timeline-content">
-
-                <h4>
-                  Marketing & Customer Service Assistant Manager
-                </h4>
-
-                <p>
-                  Sprachcaffe — Frankfurt, Germany
-                </p>
-
+                <h4>Marketing & Customer Service Assistant Manager</h4>
+                <p>Sprachcaffe — Frankfurt, Germany</p>
               </div>
-
             </div>
 
-
             <div class="timeline-item">
-
-              <div class="timeline-date">
-                2020—2022
-              </div>
-
+              <div class="timeline-date">2020—2022</div>
               <div class="timeline-content">
-
-                <h4>
-                  Marketing & Communications Intern
-                </h4>
-
-                <p>
-                  Artisans du Monde — Toulouse, France
-                </p>
-
+                <h4>Marketing & Communications Intern</h4>
+                <p>Artisans du Monde — Toulouse, France</p>
               </div>
-
             </div>
 
-
             <div class="timeline-item">
-
-              <div class="timeline-date">
-                2018—2020
-              </div>
-
+              <div class="timeline-date">2018—2020</div>
               <div class="timeline-content">
-
-                <h4>
-                  Tourism & International Customer Service Intern
-                </h4>
-
-                <p>
-                  Metz Tourist Office — Metz, France
-                </p>
-
+                <h4>Tourism & International Customer Service Intern</h4>
+                <p>Metz Tourist Office — Metz, France</p>
               </div>
-
             </div>
 
           </div>
-
         </div>
 
-
         <div class="resume-block">
-
-          <h3>
-            Education
-          </h3>
+          <h3>Education</h3>
 
           <div class="timeline">
 
             <div class="timeline-item">
-
-              <div class="timeline-date">
-                2020—2022
-              </div>
-
+              <div class="timeline-date">2020—2022</div>
               <div class="timeline-content">
-
-                <h4>
-                  Master’s Degree in International Business Languages
-                </h4>
-
-                <p>
-                  University of Perpignan
-                </p>
-
+                <h4>Master’s Degree in International Business Languages</h4>
+                <p>University of Perpignan</p>
               </div>
-
             </div>
-
 
             <div class="timeline-item">
-
-              <div class="timeline-date">
-                2017—2020
-              </div>
-
+              <div class="timeline-date">2017—2020</div>
               <div class="timeline-content">
-
-                <h4>
-                  Double Degree in English & Spanish
-                </h4>
-
-                <p>
-                  Erasmus year in Valladolid, Spain · Graduated with honors
-                </p>
-
+                <h4>Double Degree in English & Spanish</h4>
+                <p>Erasmus year in Valladolid, Spain · Graduated with honors</p>
               </div>
-
             </div>
 
           </div>
-
         </div>
-
 
         <div class="resume-block">
-
-          <h3>
-            Languages
-          </h3>
+          <h3>Languages</h3>
 
           <div class="resume-list">
-
-            <div>
-              <strong>French</strong> — Native
-            </div>
-
-            <div>
-              <strong>English</strong> — C1
-            </div>
-
-            <div>
-              <strong>Spanish</strong> — C1
-            </div>
-
-            <div>
-              <strong>German</strong> — A2
-            </div>
-
+            <div><strong>French</strong> — Native</div>
+            <div><strong>English</strong> — C1</div>
+            <div><strong>Spanish</strong> — C1</div>
+            <div><strong>German</strong> — A2</div>
           </div>
-
         </div>
-
 
         <div class="resume-block">
-
-          <h3>
-            Tools
-          </h3>
+          <h3>Tools</h3>
 
           <div class="resume-list">
-
-            <div>
-              Microsoft Office
-            </div>
-
-            <div>
-              Google Workspace
-            </div>
-
-            <div>
-              ChatGPT
-            </div>
-
-            <div>
-              Claude
-            </div>
-
-            <div>
-              Trello
-            </div>
-
-            <div>
-              ClickUp
-            </div>
-
-            <div>
-              InDesign
-            </div>
-
+            <div>Microsoft Office</div>
+            <div>Google Workspace</div>
+            <div>ChatGPT</div>
+            <div>Claude</div>
+            <div>Trello</div>
+            <div>ClickUp</div>
+            <div>InDesign</div>
           </div>
-
         </div>
-
       </section>
 
-
-      <!-- =========================
-           CONTACT
-      ========================= -->
-
       <section id="contact">
-
         <div class="contact-card">
+          <div class="section-label">Contact</div>
 
-          <div class="section-label">
-            Contact
-          </div>
-
-          <h2>
-            Let's work together.
-          </h2>
+          <h2>Let's work together.</h2>
 
           <p>
             Looking for multilingual content, French localization
@@ -1510,13 +911,7 @@
           </p>
 
           <div class="contact-links">
-
-            <a
-              class="contact-link"
-              href="mailto:gaelleduthe@yahoo.fr"
-            >
-              Email me
-            </a>
+            <a class="contact-link" href="mailto:gaelleduthe@yahoo.fr">Email me</a>
 
             <a
               class="contact-link"
@@ -1526,192 +921,136 @@
             >
               LinkedIn
             </a>
-
           </div>
-
         </div>
-
       </section>
-
-
-      <!-- =========================
-           FOOTER
-      ========================= -->
 
       <footer>
         © 2026 Gaëlle Duthe · Multilingual Copywriter & Localization Specialist
       </footer>
 
     </main>
-
   </div>
 
+  <!--
+    IMPORTANT:
+    The lightbox is outside the portfolio cards and directly inside <body>.
+    This prevents any parent element from clipping the enlarged image.
+  -->
+  <div
+    id="imageModal"
+    class="image-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Enlarged portfolio image"
+    onclick="closeImage()"
+  >
+    <button
+      class="image-modal-close"
+      type="button"
+      aria-label="Close image"
+      onclick="event.stopPropagation(); closeImage()"
+    >
+      ×
+    </button>
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
+    <img
+      id="modalImage"
+      src=""
+      alt=""
+      onclick="event.stopPropagation()"
+    >
+  </div>
 
   <script>
-
-    /* =========================
-       IMAGE LIGHTBOX
-    ========================= */
-
-    function openImage(src) {
-
+    function openImage(src, alt) {
       const modal = document.getElementById("imageModal");
       const modalImage = document.getElementById("modalImage");
 
       modalImage.src = src;
+      modalImage.alt = alt || "Enlarged portfolio image";
 
       modal.classList.add("open");
-
       document.body.classList.add("modal-open");
     }
 
-
     function closeImage() {
-
       const modal = document.getElementById("imageModal");
+      const modalImage = document.getElementById("modalImage");
 
       modal.classList.remove("open");
-
       document.body.classList.remove("modal-open");
 
-      /*
-        Clear the image after closing.
-        This prevents an old image from remaining
-        loaded in the modal.
-      */
       setTimeout(() => {
-        const modalImage =
-          document.getElementById("modalImage");
-
         if (!modal.classList.contains("open")) {
           modalImage.src = "";
+          modalImage.alt = "";
         }
       }, 150);
     }
 
-
-    /* Close lightbox with Escape */
-
     document.addEventListener("keydown", event => {
-
       if (event.key === "Escape") {
         closeImage();
       }
-
     });
 
-
-    /* =========================
-       PORTFOLIO FILTERS
-    ========================= */
-
-    const filterButtons =
-      document.querySelectorAll(".filter-btn");
-
-    const projects =
-      document.querySelectorAll(".project");
-
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projects = document.querySelectorAll(".project");
 
     filterButtons.forEach(button => {
-
       button.addEventListener("click", () => {
-
         const filter = button.dataset.filter;
-
 
         filterButtons.forEach(btn => {
           btn.classList.remove("active");
         });
 
-
         button.classList.add("active");
 
-
         projects.forEach(project => {
+          const categories = project.dataset.category || "";
 
-          const categories =
-            project.dataset.category || "";
-
-
-          if (
-            filter === "all" ||
-            categories.includes(filter)
-          ) {
-
+          if (filter === "all" || categories.includes(filter)) {
             project.classList.remove("hidden");
-
           } else {
-
             project.classList.add("hidden");
-
           }
-
         });
-
       });
-
     });
 
+    const sections = document.querySelectorAll("main section");
+    const navLinks = document.querySelectorAll(".nav a");
 
-    /* =========================
-       HIGHLIGHT CURRENT NAVIGATION
-    ========================= */
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+              link.classList.remove("active");
+            });
 
-    const sections =
-      document.querySelectorAll("main section");
+            const activeLink = document.querySelector(
+              `.nav a[href="#${entry.target.id}"]`
+            );
 
-    const navLinks =
-      document.querySelectorAll(".nav a");
-
-
-    const observer =
-      new IntersectionObserver(
-
-        entries => {
-
-          entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-              navLinks.forEach(link => {
-                link.classList.remove("active");
-              });
-
-
-              const activeLink =
-                document.querySelector(
-                  `.nav a[href="#${entry.target.id}"]`
-                );
-
-
-              if (activeLink) {
-                activeLink.classList.add("active");
-              }
-
+            if (activeLink) {
+              activeLink.classList.add("active");
             }
-
-          });
-
-        },
-
-        {
-          threshold: 0.25,
-          rootMargin: "-20% 0px -60% 0px"
-        }
-
-      );
-
+          }
+        });
+      },
+      {
+        threshold:0.25,
+        rootMargin:"-20% 0px -60% 0px"
+      }
+    );
 
     sections.forEach(section => {
       observer.observe(section);
     });
-
   </script>
 
 </body>
 </html>
-```
