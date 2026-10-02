@@ -1,9 +1,13 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Gaëlle Duthe | Multilingual Copywriter & Localization Specialist</title>
 
@@ -37,6 +41,9 @@
 
     html {
       scroll-behavior: smooth;
+      width: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
     }
 
     body {
@@ -53,6 +60,15 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+
+      width: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    body.modal-open {
+      overflow: hidden;
     }
 
     a {
@@ -70,11 +86,18 @@
     ========================= */
 
     .site {
+      width: 100%;
       max-width: var(--max);
+      min-height: 100vh;
       margin: 0 auto;
+
       display: grid;
-      grid-template-columns: var(--sidebar) 1fr;
-      gap: 70px;
+
+      grid-template-columns:
+        minmax(240px, var(--sidebar))
+        minmax(0, 1fr);
+
+      gap: 50px;
       padding: 50px 28px;
     }
 
@@ -150,6 +173,7 @@
       border-radius: 10px;
       color: var(--muted);
       font-size: 0.9rem;
+
       transition:
         color .2s ease,
         background .2s ease;
@@ -171,12 +195,14 @@
     ========================= */
 
     main {
+      width: 100%;
       min-width: 0;
     }
 
     section {
       scroll-margin-top: 35px;
       margin-bottom: 110px;
+      min-width: 0;
     }
 
     .section-label {
@@ -223,8 +249,10 @@
 
     .expertise-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
+      width: 100%;
+      min-width: 0;
     }
 
     .expertise-card {
@@ -232,6 +260,8 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 26px;
+      min-width: 0;
+
       transition:
         transform .25s ease,
         box-shadow .25s ease;
@@ -279,6 +309,7 @@
       font-family: inherit;
       font-size: .82rem;
       cursor: pointer;
+
       transition: all .2s ease;
     }
 
@@ -297,6 +328,8 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 22px;
+      width: 100%;
+      min-width: 0;
     }
 
     .project {
@@ -305,6 +338,9 @@
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: 0 8px 30px rgba(20, 20, 25, .04);
+
+      min-width: 0;
+
       transition:
         transform .25s ease,
         box-shadow .25s ease;
@@ -393,6 +429,7 @@
       object-position: top;
       border-radius: 10px;
       background: white;
+      cursor: zoom-in;
     }
 
     .newsletter-gallery img:first-child {
@@ -408,19 +445,20 @@
        IMAGE LIGHTBOX
     ========================= */
 
-    .newsletter-gallery img {
-      cursor: zoom-in;
-    }
-
     .image-modal {
       display: none;
+
       position: fixed;
       z-index: 9999;
       inset: 0;
+
       background: rgba(0, 0, 0, .88);
+
       align-items: center;
       justify-content: center;
+
       padding: 30px;
+      overflow: auto;
     }
 
     .image-modal.open {
@@ -430,8 +468,10 @@
     .image-modal img {
       max-width: 95vw;
       max-height: 92vh;
+
       width: auto;
       height: auto;
+
       object-fit: contain;
       border-radius: 8px;
       cursor: default;
@@ -441,11 +481,14 @@
       position: absolute;
       top: 18px;
       right: 28px;
+
       border: none;
       background: transparent;
+
       color: white;
       font-size: 44px;
       line-height: 1;
+
       cursor: pointer;
       z-index: 10000;
     }
@@ -505,8 +548,9 @@
 
     .timeline-item {
       display: grid;
-      grid-template-columns: 120px 1fr;
+      grid-template-columns: 120px minmax(0, 1fr);
       gap: 20px;
+      min-width: 0;
     }
 
     .timeline-date {
@@ -514,6 +558,10 @@
       font-size: .78rem;
       font-weight: 700;
       line-height: 1.5;
+    }
+
+    .timeline-content {
+      min-width: 0;
     }
 
     .timeline-content h4 {
@@ -528,8 +576,9 @@
 
     .resume-list {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px 30px;
+      min-width: 0;
     }
 
     .resume-list div {
@@ -580,6 +629,7 @@
       border-radius: 999px;
       font-size: .85rem;
       font-weight: 600;
+
       transition: transform .2s ease;
     }
 
@@ -599,8 +649,19 @@
     }
 
     /* =========================
-       RESPONSIVE
+       RESPONSIVE / ZOOM FIX
     ========================= */
+
+    @media (max-width: 1100px) {
+
+      .site {
+        grid-template-columns:
+          250px
+          minmax(0, 1fr);
+
+        gap: 35px;
+      }
+    }
 
     @media (max-width: 980px) {
 
@@ -643,6 +704,29 @@
       }
     }
 
+    @media (max-width: 800px) {
+
+      .site {
+        grid-template-columns: 1fr;
+        padding: 35px 22px;
+      }
+
+      .portfolio-grid,
+      .expertise-grid,
+      .resume-list {
+        grid-template-columns: 1fr;
+      }
+
+      .project-newsletter {
+        grid-column: auto;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+    }
+
     @media (max-width: 700px) {
 
       .site {
@@ -665,19 +749,11 @@
         font-size: 1.7rem;
       }
 
-      .expertise-grid,
-      .portfolio-grid,
-      .resume-list {
-        grid-template-columns: 1fr;
-      }
-
-      .project-newsletter {
-        grid-column: auto;
-      }
-
       .newsletter-gallery {
         height: auto;
+
         display: grid;
+
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 250px 180px;
       }
@@ -692,15 +768,37 @@
         grid-row: auto;
       }
 
-      .timeline-item {
-        grid-template-columns: 1fr;
-        gap: 5px;
-      }
-
       .contact-card {
         padding: 28px;
       }
     }
+
+    /*
+      Extra protection when browser zoom makes
+      the available viewport very narrow.
+    */
+
+    @media (max-width: 600px) {
+
+      .site {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .newsletter-gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px 220px 220px;
+      }
+
+      .newsletter-gallery img:first-child {
+        grid-column: auto;
+      }
+    }
+
   </style>
 </head>
 
@@ -977,9 +1075,7 @@
         <div class="portfolio-grid">
 
 
-          <!-- =========================
-               PROJECT 1
-          ========================= -->
+          <!-- PROJECT 1 -->
 
           <article
             class="project"
@@ -1021,9 +1117,7 @@
           </article>
 
 
-          <!-- =========================
-               PROJECT 2
-          ========================= -->
+          <!-- PROJECT 2 -->
 
           <article
             class="project"
@@ -1065,9 +1159,7 @@
           </article>
 
 
-          <!-- =========================
-               PROJECT 3 — NEWSLETTER
-          ========================= -->
+          <!-- PROJECT 3 — NEWSLETTER -->
 
           <article
             class="project project-newsletter"
@@ -1096,14 +1188,23 @@
 
             </div>
 
-            <!-- Image lightbox -->
-            <div id="imageModal" class="image-modal" onclick="closeImage()">
+
+            <!-- IMAGE LIGHTBOX -->
+
+            <div
+              id="imageModal"
+              class="image-modal"
+              onclick="closeImage()"
+            >
+
               <button
                 class="image-modal-close"
                 type="button"
                 aria-label="Close image"
                 onclick="event.stopPropagation(); closeImage()"
-              >×</button>
+              >
+                ×
+              </button>
 
               <img
                 id="modalImage"
@@ -1111,7 +1212,9 @@
                 alt=""
                 onclick="event.stopPropagation()"
               >
+
             </div>
+
 
             <div class="newsletter-content">
 
@@ -1169,7 +1272,6 @@
           </h3>
 
           <div class="timeline">
-
 
             <div class="timeline-item">
 
@@ -1266,7 +1368,6 @@
           </h3>
 
           <div class="timeline">
-
 
             <div class="timeline-item">
 
@@ -1457,32 +1558,63 @@
     ========================= */
 
     function openImage(src) {
+
       const modal = document.getElementById("imageModal");
       const modalImage = document.getElementById("modalImage");
 
       modalImage.src = src;
+
       modal.classList.add("open");
-      document.body.style.overflow = "hidden";
+
+      document.body.classList.add("modal-open");
     }
 
+
     function closeImage() {
+
       const modal = document.getElementById("imageModal");
 
       modal.classList.remove("open");
-      document.body.style.overflow = "";
+
+      document.body.classList.remove("modal-open");
+
+      /*
+        Clear the image after closing.
+        This prevents an old image from remaining
+        loaded in the modal.
+      */
+      setTimeout(() => {
+        const modalImage =
+          document.getElementById("modalImage");
+
+        if (!modal.classList.contains("open")) {
+          modalImage.src = "";
+        }
+      }, 150);
     }
 
+
+    /* Close lightbox with Escape */
+
     document.addEventListener("keydown", event => {
+
       if (event.key === "Escape") {
         closeImage();
       }
+
     });
 
 
-    /* Portfolio filters */
+    /* =========================
+       PORTFOLIO FILTERS
+    ========================= */
 
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const projects = document.querySelectorAll(".project");
+    const filterButtons =
+      document.querySelectorAll(".filter-btn");
+
+    const projects =
+      document.querySelectorAll(".project");
+
 
     filterButtons.forEach(button => {
 
@@ -1490,15 +1622,20 @@
 
         const filter = button.dataset.filter;
 
+
         filterButtons.forEach(btn => {
           btn.classList.remove("active");
         });
 
+
         button.classList.add("active");
+
 
         projects.forEach(project => {
 
-          const categories = project.dataset.category || "";
+          const categories =
+            project.dataset.category || "";
+
 
           if (
             filter === "all" ||
@@ -1520,40 +1657,54 @@
     });
 
 
-    /* Highlight current navigation section */
+    /* =========================
+       HIGHLIGHT CURRENT NAVIGATION
+    ========================= */
 
-    const sections = document.querySelectorAll("main section");
-    const navLinks = document.querySelectorAll(".nav a");
+    const sections =
+      document.querySelectorAll("main section");
 
-    const observer = new IntersectionObserver(
-      entries => {
+    const navLinks =
+      document.querySelectorAll(".nav a");
 
-        entries.forEach(entry => {
 
-          if (entry.isIntersecting) {
+    const observer =
+      new IntersectionObserver(
 
-            navLinks.forEach(link => {
-              link.classList.remove("active");
-            });
+        entries => {
 
-            const activeLink = document.querySelector(
-              `.nav a[href="#${entry.target.id}"]`
-            );
+          entries.forEach(entry => {
 
-            if (activeLink) {
-              activeLink.classList.add("active");
+            if (entry.isIntersecting) {
+
+              navLinks.forEach(link => {
+                link.classList.remove("active");
+              });
+
+
+              const activeLink =
+                document.querySelector(
+                  `.nav a[href="#${entry.target.id}"]`
+                );
+
+
+              if (activeLink) {
+                activeLink.classList.add("active");
+              }
+
             }
 
-          }
+          });
 
-        });
+        },
 
-      },
-      {
-        threshold: 0.25,
-        rootMargin: "-20% 0px -60% 0px"
-      }
-    );
+        {
+          threshold: 0.25,
+          rootMargin: "-20% 0px -60% 0px"
+        }
+
+      );
+
 
     sections.forEach(section => {
       observer.observe(section);
@@ -1563,3 +1714,4 @@
 
 </body>
 </html>
+```
